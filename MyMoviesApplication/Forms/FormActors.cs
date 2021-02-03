@@ -8,15 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MyMoviesApplication
+namespace MyMoviesApplication.Forms
 {
-    public partial class Form1 : Form
+    public partial class FormActors : Form
     {
-        public Form1()
+        public FormActors()
         {
             InitializeComponent();
-            var actors = new Forms.FormActors();
-            actors.Show();
         }
     }
 }
