@@ -32,19 +32,19 @@ namespace MyMoviesApplication.Forms
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormActors));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBoxActorId = new System.Windows.Forms.TextBox();
-            this.textBoxLinkImdb = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBoxCredits = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.dateTimePickerLastUpdate = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerRegisterDate = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.textBoxActor = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.dateTimePickerRegisterDate = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerLastUpdate = new System.Windows.Forms.DateTimePicker();
-            this.bindingNavigatorActors = new System.Windows.Forms.BindingNavigator(this.components);
+            this.textBoxCredits = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBoxLinkImdb = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxActorId = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dataGridViewActors = new System.Windows.Forms.DataGridView();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -55,12 +55,11 @@ namespace MyMoviesApplication.Forms
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.dataGridViewActors = new System.Windows.Forms.DataGridView();
+            this.bindingNavigatorActors = new System.Windows.Forms.BindingNavigator(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActors)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigatorActors)).BeginInit();
             this.bindingNavigatorActors.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActors)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -81,70 +80,53 @@ namespace MyMoviesApplication.Forms
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 28);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(487, 174);
+            this.panel1.Size = new System.Drawing.Size(562, 174);
             this.panel1.TabIndex = 0;
             // 
-            // label1
+            // dateTimePickerLastUpdate
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Actor ID:";
+            this.dateTimePickerLastUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerLastUpdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerLastUpdate.Location = new System.Drawing.Point(395, 134);
+            this.dateTimePickerLastUpdate.Name = "dateTimePickerLastUpdate";
+            this.dateTimePickerLastUpdate.Size = new System.Drawing.Size(160, 26);
+            this.dateTimePickerLastUpdate.TabIndex = 4;
             // 
-            // textBoxActorId
+            // dateTimePickerRegisterDate
             // 
-            this.textBoxActorId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxActorId.Location = new System.Drawing.Point(121, 6);
-            this.textBoxActorId.Name = "textBoxActorId";
-            this.textBoxActorId.ReadOnly = true;
-            this.textBoxActorId.Size = new System.Drawing.Size(100, 26);
-            this.textBoxActorId.TabIndex = 6;
+            this.dateTimePickerRegisterDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerRegisterDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerRegisterDate.Location = new System.Drawing.Point(121, 134);
+            this.dateTimePickerRegisterDate.Name = "dateTimePickerRegisterDate";
+            this.dateTimePickerRegisterDate.Size = new System.Drawing.Size(160, 26);
+            this.dateTimePickerRegisterDate.TabIndex = 3;
             // 
-            // textBoxLinkImdb
+            // label6
             // 
-            this.textBoxLinkImdb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLinkImdb.Location = new System.Drawing.Point(121, 102);
-            this.textBoxLinkImdb.Name = "textBoxLinkImdb";
-            this.textBoxLinkImdb.Size = new System.Drawing.Size(351, 26);
-            this.textBoxLinkImdb.TabIndex = 2;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(288, 137);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(101, 20);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Last Update:";
             // 
-            // label2
+            // label5
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 105);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 20);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Link IMDB:";
-            // 
-            // textBoxCredits
-            // 
-            this.textBoxCredits.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxCredits.Location = new System.Drawing.Point(121, 70);
-            this.textBoxCredits.Name = "textBoxCredits";
-            this.textBoxCredits.Size = new System.Drawing.Size(351, 26);
-            this.textBoxCredits.TabIndex = 1;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 73);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 20);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Credits:";
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(3, 137);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(112, 20);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Register Date:";
             // 
             // textBoxActor
             // 
             this.textBoxActor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxActor.Location = new System.Drawing.Point(121, 38);
             this.textBoxActor.Name = "textBoxActor";
-            this.textBoxActor.Size = new System.Drawing.Size(351, 26);
+            this.textBoxActor.Size = new System.Drawing.Size(434, 26);
             this.textBoxActor.TabIndex = 0;
             // 
             // label4
@@ -157,72 +139,72 @@ namespace MyMoviesApplication.Forms
             this.label4.TabIndex = 6;
             this.label4.Text = "Actor:";
             // 
-            // label5
+            // textBoxCredits
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 137);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(112, 20);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Register Date:";
+            this.textBoxCredits.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxCredits.Location = new System.Drawing.Point(121, 70);
+            this.textBoxCredits.Name = "textBoxCredits";
+            this.textBoxCredits.Size = new System.Drawing.Size(434, 26);
+            this.textBoxCredits.TabIndex = 1;
             // 
-            // label6
+            // label3
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(247, 137);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(101, 20);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Last Update:";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(3, 73);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(63, 20);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Credits:";
             // 
-            // dateTimePickerRegisterDate
+            // textBoxLinkImdb
             // 
-            this.dateTimePickerRegisterDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerRegisterDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerRegisterDate.Location = new System.Drawing.Point(121, 134);
-            this.dateTimePickerRegisterDate.Name = "dateTimePickerRegisterDate";
-            this.dateTimePickerRegisterDate.Size = new System.Drawing.Size(118, 26);
-            this.dateTimePickerRegisterDate.TabIndex = 3;
+            this.textBoxLinkImdb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxLinkImdb.Location = new System.Drawing.Point(121, 102);
+            this.textBoxLinkImdb.Name = "textBoxLinkImdb";
+            this.textBoxLinkImdb.Size = new System.Drawing.Size(434, 26);
+            this.textBoxLinkImdb.TabIndex = 2;
             // 
-            // dateTimePickerLastUpdate
+            // label2
             // 
-            this.dateTimePickerLastUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerLastUpdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerLastUpdate.Location = new System.Drawing.Point(354, 134);
-            this.dateTimePickerLastUpdate.Name = "dateTimePickerLastUpdate";
-            this.dateTimePickerLastUpdate.Size = new System.Drawing.Size(118, 26);
-            this.dateTimePickerLastUpdate.TabIndex = 4;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(3, 105);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(87, 20);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Link IMDB:";
             // 
-            // bindingNavigatorActors
+            // textBoxActorId
             // 
-            this.bindingNavigatorActors.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.bindingNavigatorActors.CountItem = this.bindingNavigatorCountItem;
-            this.bindingNavigatorActors.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.bindingNavigatorActors.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bindingNavigatorActors.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem});
-            this.bindingNavigatorActors.Location = new System.Drawing.Point(0, 0);
-            this.bindingNavigatorActors.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.bindingNavigatorActors.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.bindingNavigatorActors.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.bindingNavigatorActors.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.bindingNavigatorActors.Name = "bindingNavigatorActors";
-            this.bindingNavigatorActors.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigatorActors.Size = new System.Drawing.Size(507, 25);
-            this.bindingNavigatorActors.TabIndex = 1;
-            this.bindingNavigatorActors.Text = "bindingNavigator1";
+            this.textBoxActorId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxActorId.Location = new System.Drawing.Point(121, 6);
+            this.textBoxActorId.Name = "textBoxActorId";
+            this.textBoxActorId.ReadOnly = true;
+            this.textBoxActorId.Size = new System.Drawing.Size(100, 26);
+            this.textBoxActorId.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Actor ID:";
+            // 
+            // dataGridViewActors
+            // 
+            this.dataGridViewActors.AllowUserToAddRows = false;
+            this.dataGridViewActors.AllowUserToDeleteRows = false;
+            this.dataGridViewActors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewActors.Location = new System.Drawing.Point(12, 208);
+            this.dataGridViewActors.Name = "dataGridViewActors";
+            this.dataGridViewActors.ReadOnly = true;
+            this.dataGridViewActors.Size = new System.Drawing.Size(562, 230);
+            this.dataGridViewActors.TabIndex = 5;
+            this.dataGridViewActors.SelectionChanged += new System.EventHandler(this.DataGridViewActors_SelectionChanged);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -265,7 +247,7 @@ namespace MyMoviesApplication.Forms
             // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
@@ -288,7 +270,7 @@ namespace MyMoviesApplication.Forms
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorAddNewItem
@@ -300,28 +282,40 @@ namespace MyMoviesApplication.Forms
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Add new";
             // 
-            // bindingNavigatorDeleteItem
+            // bindingNavigatorActors
             // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
-            // 
-            // dataGridViewActors
-            // 
-            this.dataGridViewActors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewActors.Location = new System.Drawing.Point(12, 208);
-            this.dataGridViewActors.Name = "dataGridViewActors";
-            this.dataGridViewActors.Size = new System.Drawing.Size(483, 230);
-            this.dataGridViewActors.TabIndex = 5;
+            this.bindingNavigatorActors.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.bindingNavigatorActors.CountItem = this.bindingNavigatorCountItem;
+            this.bindingNavigatorActors.DeleteItem = null;
+            this.bindingNavigatorActors.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bindingNavigatorActors.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.bindingNavigatorAddNewItem});
+            this.bindingNavigatorActors.Location = new System.Drawing.Point(0, 0);
+            this.bindingNavigatorActors.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.bindingNavigatorActors.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.bindingNavigatorActors.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.bindingNavigatorActors.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.bindingNavigatorActors.Name = "bindingNavigatorActors";
+            this.bindingNavigatorActors.PositionItem = this.bindingNavigatorPositionItem;
+            this.bindingNavigatorActors.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.bindingNavigatorActors.Size = new System.Drawing.Size(586, 25);
+            this.bindingNavigatorActors.TabIndex = 1;
+            this.bindingNavigatorActors.Text = "bindingNavigator1";
             // 
             // FormActors
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(507, 450);
+            this.ClientSize = new System.Drawing.Size(586, 450);
             this.Controls.Add(this.dataGridViewActors);
             this.Controls.Add(this.bindingNavigatorActors);
             this.Controls.Add(this.panel1);
@@ -331,10 +325,10 @@ namespace MyMoviesApplication.Forms
             this.Text = "Actors";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActors)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigatorActors)).EndInit();
             this.bindingNavigatorActors.ResumeLayout(false);
             this.bindingNavigatorActors.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActors)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -355,18 +349,17 @@ namespace MyMoviesApplication.Forms
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dateTimePickerLastUpdate;
         private System.Windows.Forms.DateTimePicker dateTimePickerRegisterDate;
-        private System.Windows.Forms.BindingNavigator bindingNavigatorActors;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
+        private System.Windows.Forms.DataGridView dataGridViewActors;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
         private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.DataGridView dataGridViewActors;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
+        private System.Windows.Forms.BindingNavigator bindingNavigatorActors;
     }
 }
