@@ -1,7 +1,7 @@
 ﻿///Name:         Roger Silva Santos Aguiar 
 ///Function:     This is the connection class
-///Initial date: February 2, 2021
-///Last update:  February 2, 2021
+///Initial date: February 3, 2021
+///Last update:  February 4, 2021
 
 using System;
 using System.Collections.Generic;
@@ -10,18 +10,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using MySql.Data.MySqlClient;
+using System.Windows.Forms;
 
 namespace MyMoviesApplication.Forms.Classes
 {
     public class DatabaseService
     {
-        private string GetStringConnection()
+        protected string GetStringConnection()
         {
             string MyConnectionString = "Server=localhost;Database=my_movies;Uid=root;Pwd=983453069";
             return MyConnectionString;
         }
 
-        public DataSet LoadData(string sql_query)
+        protected DataSet LoadData(string sql_query)
         {
             string connection_string = GetStringConnection();
             MySqlConnection connection = new MySqlConnection(connection_string);
@@ -43,10 +44,7 @@ namespace MyMoviesApplication.Forms.Classes
             }                 
         }//End LoadData()
 
-        public void InsertRow(string sql_query)
-        {
-
-        }
+        
         
     }
 }
