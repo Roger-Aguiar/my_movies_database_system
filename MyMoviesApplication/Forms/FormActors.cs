@@ -68,6 +68,12 @@ namespace MyMoviesApplication.Forms
         {
             actors.InsertRow(textBoxActor.Text, Convert.ToInt32(textBoxCredits.Text), textBoxLinkImdb.Text, dateTimePickerRegisterDate.Value, dateTimePickerRegisterDate.Value);
             LoadActorsTable();            
-        }                
+        }
+
+        private void toolStripButtonRow_Click(object sender, EventArgs e)
+        {
+            actors.Delete(Convert.ToInt32(textBoxActorId.Text));
+            LoadActorsTable();
+        }
     }
 }
