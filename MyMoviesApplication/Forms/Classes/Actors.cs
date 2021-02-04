@@ -44,11 +44,43 @@ namespace MyMoviesApplication.Forms.Classes
             }
         }
 
+        public void Delete(int idActor)
+        {
+            string sql_query = "DELETE FROM actors WHERE idActor = @idActor";
+            string connection_string = GetStringConnection();
+            MySqlConnection connection = new MySqlConnection(connection_string);
+            connection.Open();
+
+            try
+            {
+                MySqlCommand cmd = connection.CreateCommand();
+                cmd.CommandText = sql_query;
+
+                cmd.Parameters.AddWithValue("@idActor", idActor);                
+                cmd.ExecuteNonQuery();
+                connection.Close();
+
+                MessageBox.Show("Operation has been completed!", "Information",
+                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public void Update()
+        {
+
+        }
+
         public DataSet LoadActorsTable()
         {
             string sql_query = "SELECT * FROM actors";
             DataSet dataSet = LoadData(sql_query);
             return dataSet;
         }
+
+
     }
 }

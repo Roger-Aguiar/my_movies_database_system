@@ -42,9 +42,6 @@ namespace MyMoviesApplication.Forms.Classes
             {
                 throw;
             }                 
-        }//End LoadData()
-
-        
-        
+        }//End LoadData()        
     }
 }
