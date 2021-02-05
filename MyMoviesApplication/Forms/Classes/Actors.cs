@@ -44,29 +44,10 @@ namespace MyMoviesApplication.Forms.Classes
             }
         }
 
-        public void Delete(int idActor)
+        public void DeleteRow(int id)
         {
-            string sql_query = "DELETE FROM actors WHERE idActor = @idActor";
-            string connection_string = GetStringConnection();
-            MySqlConnection connection = new MySqlConnection(connection_string);
-            connection.Open();
-
-            try
-            {
-                MySqlCommand cmd = connection.CreateCommand();
-                cmd.CommandText = sql_query;
-
-                cmd.Parameters.AddWithValue("@idActor", idActor);                
-                cmd.ExecuteNonQuery();
-                connection.Close();
-
-                MessageBox.Show("Operation has been completed!", "Information",
-                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+            string sql_query = "DELETE FROM actors WHERE idActor = @id";
+            Delete(id, sql_query);
         }
 
         public void Update(int idActor, string actorName, int credits, string linkIMDB, DateTime registerDate, DateTime lastUpdate)
