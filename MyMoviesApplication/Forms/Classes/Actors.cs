@@ -97,7 +97,6 @@ namespace MyMoviesApplication.Forms.Classes
             {
                 throw;
             }
-
         }
 
         public DataSet LoadActorsTable()
@@ -106,7 +105,5 @@ namespace MyMoviesApplication.Forms.Classes
             DataSet dataSet = LoadData(sql_query);
             return dataSet;
         }
-
-
     }
 }
