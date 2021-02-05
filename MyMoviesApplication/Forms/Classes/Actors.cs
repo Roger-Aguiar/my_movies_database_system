@@ -69,8 +69,34 @@ namespace MyMoviesApplication.Forms.Classes
             }
         }
 
-        public void Update()
+        public void Update(int idActor, string actorName, int credits, string linkIMDB, DateTime registerDate, DateTime lastUpdate)
         {
+            string sql_query = "UPDATE actors SET actorName = @actorName, credits = @credits, linkIMDB = @linkIMDB, registerDate = @registerDate, lastUpdate = @lastUpdate WHERE idActor = @idActor;";
+            string connection_string = GetStringConnection();
+            MySqlConnection connection = new MySqlConnection(connection_string);
+            connection.Open();
+
+            try
+            {
+                MySqlCommand cmd = connection.CreateCommand();
+                cmd.CommandText = sql_query;
+
+                cmd.Parameters.AddWithValue("@idActor", idActor);
+                cmd.Parameters.AddWithValue("@actorName", actorName);
+                cmd.Parameters.AddWithValue("@credits", credits);
+                cmd.Parameters.AddWithValue("@linkIMDB", linkIMDB);
+                cmd.Parameters.AddWithValue("@registerDate", registerDate);
+                cmd.Parameters.AddWithValue("@lastUpdate", lastUpdate);
+                cmd.ExecuteNonQuery();
+                connection.Close();
+
+                MessageBox.Show("Operation has been completed!", "Information",
+                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
 
         }
 

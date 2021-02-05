@@ -58,6 +58,7 @@ namespace MyMoviesApplication.Forms
             this.toolStripButtonAdd = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonSave = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonRow = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonUpdate = new System.Windows.Forms.ToolStripButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActors)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigatorActors)).BeginInit();
@@ -294,7 +295,8 @@ namespace MyMoviesApplication.Forms
             this.bindingNavigatorSeparator2,
             this.toolStripButtonAdd,
             this.toolStripButtonSave,
-            this.toolStripButtonRow});
+            this.toolStripButtonRow,
+            this.toolStripButtonUpdate});
             this.bindingNavigatorActors.Location = new System.Drawing.Point(0, 0);
             this.bindingNavigatorActors.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigatorActors.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -336,6 +338,16 @@ namespace MyMoviesApplication.Forms
             this.toolStripButtonRow.Size = new System.Drawing.Size(23, 22);
             this.toolStripButtonRow.Text = "Delete row";
             this.toolStripButtonRow.Click += new System.EventHandler(this.toolStripButtonRow_Click);
+            // 
+            // toolStripButtonUpdate
+            // 
+            this.toolStripButtonUpdate.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonUpdate.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonUpdate.Image")));
+            this.toolStripButtonUpdate.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonUpdate.Name = "toolStripButtonUpdate";
+            this.toolStripButtonUpdate.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonUpdate.Text = "Update row";
+            this.toolStripButtonUpdate.Click += new System.EventHandler(this.toolStripButtonUpdate_Click);
             // 
             // FormActors
             // 
@@ -389,5 +401,6 @@ namespace MyMoviesApplication.Forms
         private System.Windows.Forms.ToolStripButton toolStripButtonAdd;
         private System.Windows.Forms.ToolStripButton toolStripButtonSave;
         private System.Windows.Forms.ToolStripButton toolStripButtonRow;
+        private System.Windows.Forms.ToolStripButton toolStripButtonUpdate;
     }
 }

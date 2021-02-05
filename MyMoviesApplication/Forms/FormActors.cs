@@ -1,7 +1,7 @@
 ﻿///Name:         Roger Silva Santos Aguiar
 ///Function:     Methods and events of the Actors form 
-///Initial date: February 4, 2021
-///Last update:  February 4, 2021
+///Initial date: February 3, 2021
+///Last update:  February 5, 2021
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -73,6 +73,12 @@ namespace MyMoviesApplication.Forms
         private void toolStripButtonRow_Click(object sender, EventArgs e)
         {
             actors.Delete(Convert.ToInt32(textBoxActorId.Text));
+            LoadActorsTable();
+        }
+
+        private void toolStripButtonUpdate_Click(object sender, EventArgs e)
+        {
+            actors.Update(Convert.ToInt32(textBoxActorId.Text), textBoxActor.Text, Convert.ToInt32(textBoxCredits.Text), textBoxLinkImdb.Text, dateTimePickerRegisterDate.Value, dateTimePickerLastUpdate.Value);
             LoadActorsTable();
         }
     }
