@@ -1,7 +1,7 @@
 ﻿///Name:         Roger Silva Santos Aguiar
 ///Function:     Actors table operation
 ///Initial date: February 4, 2021
-///Last update:  February 4, 2021
+///Last update:  February 5, 2021
 using System;
 using System.Collections.Generic;
 using System.Linq;
