@@ -72,7 +72,7 @@ namespace MyMoviesApplication.Forms
 
         private void toolStripButtonRow_Click(object sender, EventArgs e)
         {
-            actors.Delete(Convert.ToInt32(textBoxActorId.Text));
+            actors.DeleteRow(Convert.ToInt32(textBoxActorId.Text));
             LoadActorsTable();
         }
 
