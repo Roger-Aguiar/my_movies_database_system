@@ -1,7 +1,7 @@
 ﻿///Name:         Roger Silva Santos Aguiar
 ///Function:     Methods and events of the Actors form 
 ///Initial date: February 3, 2021
-///Last update:  February 5, 2021
+///Last update:  February 6, 2021
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -37,14 +37,17 @@ namespace MyMoviesApplication.Forms
 
         private void LinkDataGridViewToFields()
         {
-            toolStripLabelRowsIdentification.Text = "{ " + Convert.ToInt32(dataGridViewActors.CurrentRow.Index + 1) + " } of " + dataGridViewActors.Rows.Count;
+            if(dataGridViewActors.Rows.Count > 0)
+            {
+                toolStripLabelRowsIdentification.Text = "{ " + Convert.ToInt32(dataGridViewActors.CurrentRow.Index + 1) + " } of " + dataGridViewActors.Rows.Count;
 
-            textBoxActorId.Text = dataGridViewActors.Rows[dataGridViewActors.CurrentRow.Index].Cells[0].Value.ToString();
-            textBoxActor.Text = dataGridViewActors.Rows[dataGridViewActors.CurrentRow.Index].Cells[1].Value.ToString();
-            textBoxCredits.Text = dataGridViewActors.Rows[dataGridViewActors.CurrentRow.Index].Cells[2].Value.ToString();
-            textBoxLinkImdb.Text = dataGridViewActors.Rows[dataGridViewActors.CurrentRow.Index].Cells[3].Value.ToString();
-            dateTimePickerRegisterDate.Value = Convert.ToDateTime(dataGridViewActors.Rows[dataGridViewActors.CurrentRow.Index].Cells[4].Value.ToString());
-            dateTimePickerLastUpdate.Value = Convert.ToDateTime(dataGridViewActors.Rows[dataGridViewActors.CurrentRow.Index].Cells[5].Value.ToString());                       
+                textBoxActorId.Text = dataGridViewActors.Rows[dataGridViewActors.CurrentRow.Index].Cells[0].Value.ToString();
+                textBoxActor.Text = dataGridViewActors.Rows[dataGridViewActors.CurrentRow.Index].Cells[1].Value.ToString();
+                textBoxCredits.Text = dataGridViewActors.Rows[dataGridViewActors.CurrentRow.Index].Cells[2].Value.ToString();
+                textBoxLinkImdb.Text = dataGridViewActors.Rows[dataGridViewActors.CurrentRow.Index].Cells[3].Value.ToString();
+                dateTimePickerRegisterDate.Value = Convert.ToDateTime(dataGridViewActors.Rows[dataGridViewActors.CurrentRow.Index].Cells[4].Value.ToString());
+                dateTimePickerLastUpdate.Value = Convert.ToDateTime(dataGridViewActors.Rows[dataGridViewActors.CurrentRow.Index].Cells[5].Value.ToString());
+            }                                   
         }
 
         //**************************************************************************************************************
