@@ -82,7 +82,7 @@ namespace MyMoviesApplication.Forms.Classes
 
         public DataSet LoadActorsTable()
         {
-            string sql_query = "SELECT * FROM actors";
+            string sql_query = "SELECT idActor AS Id, actorName AS Actor, credits AS Credits, linkIMDB AS Link, registerDate AS Registered, lastUpdate AS Updated FROM actors ORDER BY actorName; ";
             DataSet dataSet = LoadData(sql_query);
             return dataSet;
         }

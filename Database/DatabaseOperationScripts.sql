@@ -22,3 +22,8 @@ SET registerDate = '2021-02-02'
 WHERE idActor = 3;
 
 SELECT * FROM actors;
+
+SELECT idActor AS Id, actorName AS Actor, credits AS Credits, linkIMDB AS Link, registerDate AS Registered, lastUpdate AS Updated 
+FROM actors;
+
+DESCRIBE actors;

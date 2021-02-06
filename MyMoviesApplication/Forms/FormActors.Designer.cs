@@ -45,23 +45,17 @@ namespace MyMoviesApplication.Forms
             this.textBoxActorId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewActors = new System.Windows.Forms.DataGridView();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorActors = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.toolStripLabelRowsIdentification = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButtonAdd = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonSave = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonRow = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonDelete = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonUpdate = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActors)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigatorActors)).BeginInit();
-            this.bindingNavigatorActors.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator)).BeginInit();
+            this.bindingNavigator.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -200,59 +194,53 @@ namespace MyMoviesApplication.Forms
             // 
             this.dataGridViewActors.AllowUserToAddRows = false;
             this.dataGridViewActors.AllowUserToDeleteRows = false;
+            this.dataGridViewActors.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewActors.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.dataGridViewActors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewActors.Location = new System.Drawing.Point(12, 208);
             this.dataGridViewActors.Name = "dataGridViewActors";
             this.dataGridViewActors.ReadOnly = true;
+            this.dataGridViewActors.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dataGridViewActors.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewActors.Size = new System.Drawing.Size(562, 230);
             this.dataGridViewActors.TabIndex = 5;
             this.dataGridViewActors.SelectionChanged += new System.EventHandler(this.DataGridViewActors_SelectionChanged);
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // bindingNavigatorActors
+            // bindingNavigator
             // 
-            this.bindingNavigatorActors.AddNewItem = null;
-            this.bindingNavigatorActors.CountItem = null;
-            this.bindingNavigatorActors.DeleteItem = null;
-            this.bindingNavigatorActors.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bindingNavigatorActors.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripButton2,
-            this.bindingNavigatorSeparator,
-            this.toolStripLabel1,
-            this.bindingNavigatorSeparator1,
-            this.toolStripButton3,
-            this.toolStripButton4,
+            this.bindingNavigator.AddNewItem = null;
+            this.bindingNavigator.CountItem = null;
+            this.bindingNavigator.DeleteItem = null;
+            this.bindingNavigator.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLabelRowsIdentification,
             this.bindingNavigatorSeparator2,
             this.toolStripButtonAdd,
             this.toolStripButtonSave,
-            this.toolStripButtonRow,
+            this.toolStripButtonDelete,
             this.toolStripButtonUpdate});
-            this.bindingNavigatorActors.Location = new System.Drawing.Point(0, 0);
-            this.bindingNavigatorActors.MoveFirstItem = null;
-            this.bindingNavigatorActors.MoveLastItem = null;
-            this.bindingNavigatorActors.MoveNextItem = null;
-            this.bindingNavigatorActors.MovePreviousItem = null;
-            this.bindingNavigatorActors.Name = "bindingNavigatorActors";
-            this.bindingNavigatorActors.PositionItem = null;
-            this.bindingNavigatorActors.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.bindingNavigatorActors.Size = new System.Drawing.Size(586, 25);
-            this.bindingNavigatorActors.TabIndex = 1;
-            this.bindingNavigatorActors.Text = "bindingNavigator1";
+            this.bindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.bindingNavigator.MoveFirstItem = null;
+            this.bindingNavigator.MoveLastItem = null;
+            this.bindingNavigator.MoveNextItem = null;
+            this.bindingNavigator.MovePreviousItem = null;
+            this.bindingNavigator.Name = "bindingNavigator";
+            this.bindingNavigator.PositionItem = null;
+            this.bindingNavigator.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.bindingNavigator.Size = new System.Drawing.Size(586, 25);
+            this.bindingNavigator.TabIndex = 1;
+            this.bindingNavigator.Text = "bindingNavigator1";
+            // 
+            // toolStripLabelRowsIdentification
+            // 
+            this.toolStripLabelRowsIdentification.Name = "toolStripLabelRowsIdentification";
+            this.toolStripLabelRowsIdentification.Size = new System.Drawing.Size(115, 22);
+            this.toolStripLabelRowsIdentification.Text = "toolStripLabel1";
             // 
             // toolStripButtonAdd
             // 
@@ -267,6 +255,7 @@ namespace MyMoviesApplication.Forms
             // toolStripButtonSave
             // 
             this.toolStripButtonSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonSave.Enabled = false;
             this.toolStripButtonSave.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonSave.Image")));
             this.toolStripButtonSave.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonSave.Name = "toolStripButtonSave";
@@ -274,15 +263,15 @@ namespace MyMoviesApplication.Forms
             this.toolStripButtonSave.Text = "Register";
             this.toolStripButtonSave.Click += new System.EventHandler(this.toolStripButtonSave_Click);
             // 
-            // toolStripButtonRow
+            // toolStripButtonDelete
             // 
-            this.toolStripButtonRow.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonRow.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonRow.Image")));
-            this.toolStripButtonRow.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonRow.Name = "toolStripButtonRow";
-            this.toolStripButtonRow.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonRow.Text = "Delete row";
-            this.toolStripButtonRow.Click += new System.EventHandler(this.toolStripButtonRow_Click);
+            this.toolStripButtonDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonDelete.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonDelete.Image")));
+            this.toolStripButtonDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonDelete.Name = "toolStripButtonDelete";
+            this.toolStripButtonDelete.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonDelete.Text = "Delete row";
+            this.toolStripButtonDelete.Click += new System.EventHandler(this.toolStripButtonDelete_Click);
             // 
             // toolStripButtonUpdate
             // 
@@ -294,66 +283,25 @@ namespace MyMoviesApplication.Forms
             this.toolStripButtonUpdate.Text = "Update row";
             this.toolStripButtonUpdate.Click += new System.EventHandler(this.toolStripButtonUpdate_Click);
             // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "toolStripButton1";
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton2.Text = "toolStripButton2";
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(115, 22);
-            this.toolStripLabel1.Text = "toolStripLabel1";
-            // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton3.Text = "toolStripButton3";
-            // 
-            // toolStripButton4
-            // 
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton4.Text = "toolStripButton4";
-            // 
             // FormActors
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(586, 450);
             this.Controls.Add(this.dataGridViewActors);
-            this.Controls.Add(this.bindingNavigatorActors);
+            this.Controls.Add(this.bindingNavigator);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
             this.Name = "FormActors";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Actors";
+            this.Shown += new System.EventHandler(this.FormActors_Shown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActors)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigatorActors)).EndInit();
-            this.bindingNavigatorActors.ResumeLayout(false);
-            this.bindingNavigatorActors.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator)).EndInit();
+            this.bindingNavigator.ResumeLayout(false);
+            this.bindingNavigator.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -375,18 +323,12 @@ namespace MyMoviesApplication.Forms
         private System.Windows.Forms.DateTimePicker dateTimePickerLastUpdate;
         private System.Windows.Forms.DateTimePicker dateTimePickerRegisterDate;
         private System.Windows.Forms.DataGridView dataGridViewActors;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.BindingNavigator bindingNavigatorActors;
+        private System.Windows.Forms.BindingNavigator bindingNavigator;
         private System.Windows.Forms.ToolStripButton toolStripButtonAdd;
         private System.Windows.Forms.ToolStripButton toolStripButtonSave;
-        private System.Windows.Forms.ToolStripButton toolStripButtonRow;
+        private System.Windows.Forms.ToolStripButton toolStripButtonDelete;
         private System.Windows.Forms.ToolStripButton toolStripButtonUpdate;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
-        private System.Windows.Forms.ToolStripButton toolStripButton4;
+        private System.Windows.Forms.ToolStripLabel toolStripLabelRowsIdentification;
     }
 }
