@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="my_moviesDataSet" targetNamespace="http://tempuri.org/my_moviesDataSet.xsd" xmlns:mstns="http://tempuri.org/my_moviesDataSet.xsd" xmlns="http://tempuri.org/my_moviesDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="my_moviesConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="my_moviesConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.MyMoviesApplication.Properties.Settings.GlobalReference.Default.my_moviesConnectionString" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="actorsTableAdapter" GeneratorDataComponentClassName="actorsTableAdapter" Name="actors" UserDataComponentName="actorsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="my_moviesConnectionString (Settings)" DbObjectName="my_movies.actors" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `actorName` FROM `actors`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="actorName" DataSetColumn="actorName" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="my_moviesConnectionString (Settings)" DbObjectName="my_movies.actors" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `actorName` FROM `actors`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="my_moviesConnectionString (Settings)" DbObjectName="my_movies.actors" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillBy1">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `actorName` FROM `actors`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="my_moviesConnectionString (Settings)" DbObjectName="my_movies.actors" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="GetActors" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="GetActors" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="GetActors">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        actorName
+FROM            actors
+ORDER BY actorName</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="my_moviesConnectionString (Settings)" DbObjectName="my_movies.actors" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="SelectActors" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="SelectActors" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="SelectActors">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `actorName` FROM `actors` ORDER BY 'actorName'</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="genres_has_moviesTableAdapter" GeneratorDataComponentClassName="genres_has_moviesTableAdapter" Name="genres_has_movies" UserDataComponentName="genres_has_moviesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="my_moviesConnectionString (Settings)" DbObjectName="my_movies.genres_has_movies" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM `genres_has_movies` WHERE ((`idGenre` = @p1) AND (`idMovie` = @p2))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="idGenre" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="idMovie" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO `genres_has_movies` (`idGenre`, `idMovie`) VALUES (@p1, @p2)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="idGenre" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="idMovie" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `idGenre`, `idMovie` FROM `genres_has_movies`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE `genres_has_movies` SET `idGenre` = @p1, `idMovie` = @p2 WHERE ((`idGenre` = @p3) AND (`idMovie` = @p4))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="idGenre" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="idMovie" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="idGenre" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="idMovie" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="idGenre" DataSetColumn="idGenre" />
+              <Mapping SourceColumn="idMovie" DataSetColumn="idMovie" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="my_moviesDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="my_moviesDataSet" msprop:Generator_UserDSName="my_moviesDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="actors" msprop:Generator_TableClassName="actorsDataTable" msprop:Generator_TableVarName="tableactors" msprop:Generator_RowChangedName="actorsRowChanged" msprop:Generator_TablePropName="actors" msprop:Generator_RowDeletingName="actorsRowDeleting" msprop:Generator_RowChangingName="actorsRowChanging" msprop:Generator_RowEvHandlerName="actorsRowChangeEventHandler" msprop:Generator_RowDeletedName="actorsRowDeleted" msprop:Generator_RowClassName="actorsRow" msprop:Generator_UserTableName="actors" msprop:Generator_RowEvArgName="actorsRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="actorName" msprop:Generator_ColumnVarNameInTable="columnactorName" msprop:Generator_ColumnPropNameInRow="actorName" msprop:Generator_ColumnPropNameInTable="actorNameColumn" msprop:Generator_UserColumnName="actorName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="genres_has_movies" msprop:Generator_TableClassName="genres_has_moviesDataTable" msprop:Generator_TableVarName="tablegenres_has_movies" msprop:Generator_RowChangedName="genres_has_moviesRowChanged" msprop:Generator_TablePropName="genres_has_movies" msprop:Generator_RowDeletingName="genres_has_moviesRowDeleting" msprop:Generator_RowChangingName="genres_has_moviesRowChanging" msprop:Generator_RowEvHandlerName="genres_has_moviesRowChangeEventHandler" msprop:Generator_RowDeletedName="genres_has_moviesRowDeleted" msprop:Generator_RowClassName="genres_has_moviesRow" msprop:Generator_UserTableName="genres_has_movies" msprop:Generator_RowEvArgName="genres_has_moviesRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idGenre" msprop:Generator_ColumnVarNameInTable="columnidGenre" msprop:Generator_ColumnPropNameInRow="idGenre" msprop:Generator_ColumnPropNameInTable="idGenreColumn" msprop:Generator_UserColumnName="idGenre" type="xs:int" />
+              <xs:element name="idMovie" msprop:Generator_ColumnVarNameInTable="columnidMovie" msprop:Generator_ColumnPropNameInRow="idMovie" msprop:Generator_ColumnPropNameInTable="idMovieColumn" msprop:Generator_UserColumnName="idMovie" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:genres_has_movies" />
+      <xs:field xpath="mstns:idGenre" />
+      <xs:field xpath="mstns:idMovie" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

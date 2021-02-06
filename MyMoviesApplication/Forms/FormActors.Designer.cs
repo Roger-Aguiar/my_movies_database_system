@@ -291,6 +291,7 @@ namespace MyMoviesApplication.Forms
             this.Controls.Add(this.dataGridViewActors);
             this.Controls.Add(this.bindingNavigator);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FormActors";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

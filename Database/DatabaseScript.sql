@@ -60,6 +60,7 @@ CREATE TABLE IF NOT EXISTS `my_movies`.`Genres` (
 ENGINE = InnoDB
 COMMENT = '	';
 
+DROP TABLE genres_has_movies;
 
 -- -----------------------------------------------------
 -- Table `my_movies`.`Actors_has_Movies`
@@ -103,6 +104,7 @@ CREATE TABLE IF NOT EXISTS `my_movies`.`Genres_has_Movies` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
+
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;

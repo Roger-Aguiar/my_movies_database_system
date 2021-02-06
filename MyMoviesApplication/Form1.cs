@@ -15,7 +15,7 @@ namespace MyMoviesApplication
         public Form1()
         {
             InitializeComponent();
-            var actors = new Forms.FormActors();
+            var actors = new Forms.FormMovies();
             actors.Show();
         }
     }
