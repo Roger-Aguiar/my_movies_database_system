@@ -32,5 +32,15 @@ namespace MyMoviesApplication.Properties {
                 return ((string)(this["my_moviesConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=root;password=983453069;database=my_movies2")]
+        public string my_movies2ConnectionString {
+            get {
+                return ((string)(this["my_movies2ConnectionString"]));
+            }
+        }
     }
 }

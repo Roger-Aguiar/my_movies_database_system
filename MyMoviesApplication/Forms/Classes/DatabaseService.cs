@@ -1,7 +1,7 @@
 ﻿///Name:         Roger Silva Santos Aguiar 
 ///Function:     This is the connection class
 ///Initial date: February 3, 2021
-///Last update:  February 5, 2021
+///Last update:  February 7, 2021
 
 using System;
 using System.Collections.Generic;
@@ -18,7 +18,7 @@ namespace MyMoviesApplication.Forms.Classes
     {
         protected string GetStringConnection()
         {
-            string MyConnectionString = "Server=localhost;Database=my_movies;Uid=root;Pwd=983453069";
+            string MyConnectionString = "Server=localhost;Database=my_movies2;Uid=root;Pwd=983453069";
             return MyConnectionString;
         }
 

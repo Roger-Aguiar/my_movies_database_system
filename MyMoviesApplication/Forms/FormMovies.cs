@@ -1,7 +1,7 @@
 ﻿///Name:         Roger Silva Santos Aguiar
 ///Function:     It manipulates all the events of the FormMovies
 ///Initial date: February 6, 2021
-///Last update:  February 6, 2021
+///Last update:  February 7, 2021
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,12 +19,15 @@ namespace MyMoviesApplication.Forms
     {
         private readonly Classes.Genres genre = new Genres();
         private readonly Classes.Actors actor = new Actors();
+        private readonly Classes.Movies movie = new Movies();
+        private readonly Classes.ActorsHasMovies actors_has_movies = new ActorsHasMovies();
 
         private List<string> actors = new List<string>();
 
         public FormMovies()
         {
             InitializeComponent();
+            LoadMoviesTable();
         }
 
         private void ChangePropertiesOfControlsAfterAdd()
@@ -40,6 +43,12 @@ namespace MyMoviesApplication.Forms
             toolStripButtonSave.Enabled = true;
             dateTimePickerRegisterDate.Value = DateTime.Now;
             dateTimePickerLastUpdate.Value = DateTime.Now;
+            textBoxId.Clear();
+            textBoxTitle.Clear();
+            textBoxOriginalTitle.Clear();
+            textBoxLinkImdb.Clear();
+            textBoxYear.Clear();
+            
             textBoxTitle.Focus();
         }
 
@@ -74,111 +83,90 @@ namespace MyMoviesApplication.Forms
             int idActor = actor.SelectIdActor(actorName);
             return idActor;
         }
-               
+
+        private void LoadMoviesTable()
+        {
+            DataSet dataSet = movie.LoadTable();
+            dataGridViewTable.DataSource = dataSet.Tables[0].DefaultView;
+        }
+
+        private void LinkDataGridViewToFields()
+        {
+            if (dataGridViewTable.Rows.Count > 0)
+            {
+                toolStripLabelRowsIdentification.Text = "{ " + Convert.ToInt32(dataGridViewTable.CurrentRow.Index + 1) + " } of " + dataGridViewTable.Rows.Count;
+
+                textBoxId.Text = dataGridViewTable.Rows[dataGridViewTable.CurrentRow.Index].Cells[0].Value.ToString();
+                textBoxTitle.Text = dataGridViewTable.Rows[dataGridViewTable.CurrentRow.Index].Cells[1].Value.ToString();
+                textBoxOriginalTitle.Text = dataGridViewTable.Rows[dataGridViewTable.CurrentRow.Index].Cells[2].Value.ToString();
+                textBoxYear.Text = dataGridViewTable.Rows[dataGridViewTable.CurrentRow.Index].Cells[3].Value.ToString();
+                textBoxLinkImdb.Text = dataGridViewTable.Rows[dataGridViewTable.CurrentRow.Index].Cells[4].Value.ToString();
+
+                int idGenre = movie.SelectIdGenre(textBoxTitle.Text);
+                comboBoxGenres.Text = genre.GetGenre(idGenre);
+
+                dateTimePickerRegisterDate.Value = Convert.ToDateTime(dataGridViewTable.Rows[dataGridViewTable.CurrentRow.Index].Cells[5].Value.ToString());
+                dateTimePickerLastUpdate.Value = Convert.ToDateTime(dataGridViewTable.Rows[dataGridViewTable.CurrentRow.Index].Cells[6].Value.ToString());
+            }
+        }
+
+        private void FillListBox()
+        {
+            List<string> actorsName = actor.SelectActors();
+            listBoxActors.DataSource = actorsName;
+        }
+
+        private void FillComboBoxGenres()
+        {
+            List<string> genres = genre.SelectGenres();
+            comboBoxGenres.DataSource = genres;
+        }
         //**********************************************************************************************************
         //Events
-
-        private void FormMovies_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'my_moviesDataSet11.genres' table. You can move, or remove it, as needed.
-            this.genresTableAdapter.Fill(this.my_moviesDataSet11.genres);
-            // TODO: This line of code loads data into the 'my_moviesDataSet.actors' table. You can move, or remove it, as needed.
-            this.actorsTableAdapter.Fill(this.my_moviesDataSet.actors);
-
-        }
-
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.actorsTableAdapter.FillBy(this.my_moviesDataSet.actors);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
-
-        private void fillBy1ToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.actorsTableAdapter.FillBy1(this.my_moviesDataSet.actors);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
-
-        private void selectActorsToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.actorsTableAdapter.SelectActors(this.my_moviesDataSet.actors);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
-
-        private void getActorsToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.actorsTableAdapter.GetActors(this.my_moviesDataSet.actors);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }        
-
+               
         private void toolStripButtonAdd_Click(object sender, EventArgs e)
         {
             ChangePropertiesOfControlsAfterAdd();
         }
 
         private void toolStripButtonSave_Click(object sender, EventArgs e)
-        {
-            ChangePropertiesOfControlsAfterSave();
-            int idActor;
+        {           
             int idGenre = genre.GetIdGenre(comboBoxGenres.SelectedText);
-            
+
+            movie.Insert(textBoxTitle.Text, textBoxOriginalTitle.Text, textBoxYear.Text, textBoxLinkImdb.Text, dateTimePickerRegisterDate.Value, dateTimePickerLastUpdate.Value, (idGenre + 1));
+           
+            int idMovie = movie.SelectIdMovie(textBoxTitle.Text);
+
             foreach(object actorName in actors)
             {
-                idActor = GetIdActor(actorName.ToString());
+                int idActor = GetIdActor(actorName.ToString());
+                actors_has_movies.Insert(idActor, idMovie);
             }
-       
+
+            MessageBox.Show("Operation has been completed!", "Information",
+                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            ChangePropertiesOfControlsAfterSave();
+            LoadMoviesTable();
         }
                
         private void FormMovies_Shown(object sender, EventArgs e)
-        {
-            DisplayNumberOfRows();
+        {           
+            FillListBox();
+            FillComboBoxGenres();
             Size = new Size(770, 500);
-            actors.Clear();
-            listViewSelectedActors.Clear();
+            DisplayNumberOfRows();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
             ChangePropertiesOfControlsAfterSave();
         }
-
-        private void ListBoxActors_SelectedIndexChanged(object sender, EventArgs e)
-        {            
-            actors.Add(listBoxActors.Text);
-            //listViewSelectedActors.Items.Add(listBoxActors.Text);
-        }
-
+                
         private void listBoxActors_Click(object sender, EventArgs e)
         {
             listViewSelectedActors.Items.Add(listBoxActors.Text);
+            actors.Add(listBoxActors.Text);
         }
                 
         private void listBoxActors_KeyDown(object sender, KeyEventArgs e)
@@ -186,7 +174,13 @@ namespace MyMoviesApplication.Forms
             if(e.KeyCode == Keys.Enter)
             {
                 listViewSelectedActors.Items.Add(listBoxActors.Text);
+                actors.Add(listBoxActors.Text);
             }
+        }
+
+        private void dataGridViewTable_SelectionChanged(object sender, EventArgs e)
+        {
+            LinkDataGridViewToFields();
         }
     }
 }

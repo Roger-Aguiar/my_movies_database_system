@@ -44,12 +44,8 @@ namespace MyMoviesApplication.Forms
             this.listViewSelectedActors = new System.Windows.Forms.ListView();
             this.label7 = new System.Windows.Forms.Label();
             this.comboBoxGenres = new System.Windows.Forms.ComboBox();
-            this.genresBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.my_moviesDataSet11 = new MyMoviesApplication.my_moviesDataSet1();
             this.labelActors = new System.Windows.Forms.Label();
             this.listBoxActors = new System.Windows.Forms.ListBox();
-            this.actorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.my_moviesDataSet = new MyMoviesApplication.my_moviesDataSet();
             this.dateTimePickerLastUpdate = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerRegisterDate = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
@@ -62,24 +58,11 @@ namespace MyMoviesApplication.Forms
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.actorsTableAdapter = new MyMoviesApplication.my_moviesDataSetTableAdapters.actorsTableAdapter();
-            this.getActorsToolStrip = new System.Windows.Forms.ToolStrip();
-            this.getActorsToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.my_moviesDataSet1 = new MyMoviesApplication.my_moviesDataSet();
-            this.mymoviesDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.genresTableAdapter = new MyMoviesApplication.my_moviesDataSet1TableAdapters.genresTableAdapter();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.dataGridViewTable = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator)).BeginInit();
             this.bindingNavigator.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.genresBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.my_moviesDataSet11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.actorsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.my_moviesDataSet)).BeginInit();
-            this.getActorsToolStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.my_moviesDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mymoviesDataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTable)).BeginInit();
             this.SuspendLayout();
             // 
@@ -233,9 +216,7 @@ namespace MyMoviesApplication.Forms
             // 
             // comboBoxGenres
             // 
-            this.comboBoxGenres.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.genresBindingSource, "genre", true));
-            this.comboBoxGenres.DataSource = this.genresBindingSource;
-            this.comboBoxGenres.DisplayMember = "genre";
+            this.comboBoxGenres.DisplayMember = "idGenre";
             this.comboBoxGenres.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxGenres.FormattingEnabled = true;
             this.comboBoxGenres.Location = new System.Drawing.Point(112, 163);
@@ -243,16 +224,6 @@ namespace MyMoviesApplication.Forms
             this.comboBoxGenres.Size = new System.Drawing.Size(313, 28);
             this.comboBoxGenres.TabIndex = 4;
             this.comboBoxGenres.ValueMember = "idGenre";
-            // 
-            // genresBindingSource
-            // 
-            this.genresBindingSource.DataMember = "genres";
-            this.genresBindingSource.DataSource = this.my_moviesDataSet11;
-            // 
-            // my_moviesDataSet11
-            // 
-            this.my_moviesDataSet11.DataSetName = "my_moviesDataSet1";
-            this.my_moviesDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // labelActors
             // 
@@ -267,9 +238,6 @@ namespace MyMoviesApplication.Forms
             // 
             // listBoxActors
             // 
-            this.listBoxActors.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.actorsBindingSource, "actorName", true));
-            this.listBoxActors.DataSource = this.actorsBindingSource;
-            this.listBoxActors.DisplayMember = "actorName";
             this.listBoxActors.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxActors.FormattingEnabled = true;
             this.listBoxActors.ItemHeight = 20;
@@ -281,18 +249,7 @@ namespace MyMoviesApplication.Forms
             this.listBoxActors.TabIndex = 7;
             this.listBoxActors.Visible = false;
             this.listBoxActors.Click += new System.EventHandler(this.listBoxActors_Click);
-            this.listBoxActors.SelectedIndexChanged += new System.EventHandler(this.ListBoxActors_SelectedIndexChanged);
             this.listBoxActors.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listBoxActors_KeyDown);
-            // 
-            // actorsBindingSource
-            // 
-            this.actorsBindingSource.DataMember = "actors";
-            this.actorsBindingSource.DataSource = this.my_moviesDataSet;
-            // 
-            // my_moviesDataSet
-            // 
-            this.my_moviesDataSet.DataSetName = "my_moviesDataSet";
-            this.my_moviesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // dateTimePickerLastUpdate
             // 
@@ -405,45 +362,6 @@ namespace MyMoviesApplication.Forms
             this.label1.TabIndex = 0;
             this.label1.Text = "Id movie:";
             // 
-            // actorsTableAdapter
-            // 
-            this.actorsTableAdapter.ClearBeforeFill = true;
-            // 
-            // getActorsToolStrip
-            // 
-            this.getActorsToolStrip.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.getActorsToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.getActorsToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.getActorsToolStripButton});
-            this.getActorsToolStrip.Location = new System.Drawing.Point(0, 425);
-            this.getActorsToolStrip.Name = "getActorsToolStrip";
-            this.getActorsToolStrip.Size = new System.Drawing.Size(679, 25);
-            this.getActorsToolStrip.TabIndex = 7;
-            this.getActorsToolStrip.Text = "getActorsToolStrip";
-            this.getActorsToolStrip.Visible = false;
-            // 
-            // getActorsToolStripButton
-            // 
-            this.getActorsToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.getActorsToolStripButton.Name = "getActorsToolStripButton";
-            this.getActorsToolStripButton.Size = new System.Drawing.Size(63, 22);
-            this.getActorsToolStripButton.Text = "GetActors";
-            this.getActorsToolStripButton.Click += new System.EventHandler(this.getActorsToolStripButton_Click);
-            // 
-            // my_moviesDataSet1
-            // 
-            this.my_moviesDataSet1.DataSetName = "my_moviesDataSet";
-            this.my_moviesDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // mymoviesDataSet1BindingSource
-            // 
-            this.mymoviesDataSet1BindingSource.DataSource = this.my_moviesDataSet1;
-            this.mymoviesDataSet1BindingSource.Position = 0;
-            // 
-            // genresTableAdapter
-            // 
-            this.genresTableAdapter.ClearBeforeFill = true;
-            // 
             // buttonCancel
             // 
             this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -458,6 +376,8 @@ namespace MyMoviesApplication.Forms
             // 
             // dataGridViewTable
             // 
+            this.dataGridViewTable.AllowUserToAddRows = false;
+            this.dataGridViewTable.AllowUserToDeleteRows = false;
             this.dataGridViewTable.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -468,6 +388,7 @@ namespace MyMoviesApplication.Forms
             this.dataGridViewTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewTable.Size = new System.Drawing.Size(921, 177);
             this.dataGridViewTable.TabIndex = 9;
+            this.dataGridViewTable.SelectionChanged += new System.EventHandler(this.dataGridViewTable_SelectionChanged);
             // 
             // FormMovies
             // 
@@ -476,7 +397,6 @@ namespace MyMoviesApplication.Forms
             this.ClientSize = new System.Drawing.Size(944, 461);
             this.Controls.Add(this.dataGridViewTable);
             this.Controls.Add(this.buttonCancel);
-            this.Controls.Add(this.getActorsToolStrip);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.bindingNavigator);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -484,21 +404,12 @@ namespace MyMoviesApplication.Forms
             this.Name = "FormMovies";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Movies";
-            this.Load += new System.EventHandler(this.FormMovies_Load);
             this.Shown += new System.EventHandler(this.FormMovies_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator)).EndInit();
             this.bindingNavigator.ResumeLayout(false);
             this.bindingNavigator.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.genresBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.my_moviesDataSet11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.actorsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.my_moviesDataSet)).EndInit();
-            this.getActorsToolStrip.ResumeLayout(false);
-            this.getActorsToolStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.my_moviesDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mymoviesDataSet1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTable)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -528,17 +439,7 @@ namespace MyMoviesApplication.Forms
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ListBox listBoxActors;
-        private my_moviesDataSet my_moviesDataSet;
-        private System.Windows.Forms.BindingSource actorsBindingSource;
-        private my_moviesDataSetTableAdapters.actorsTableAdapter actorsTableAdapter;
-        private System.Windows.Forms.ToolStrip getActorsToolStrip;
-        private System.Windows.Forms.ToolStripButton getActorsToolStripButton;
         private System.Windows.Forms.Label labelActors;
-        private System.Windows.Forms.BindingSource mymoviesDataSet1BindingSource;
-        private my_moviesDataSet my_moviesDataSet1;
-        private my_moviesDataSet1 my_moviesDataSet11;
-        private System.Windows.Forms.BindingSource genresBindingSource;
-        private my_moviesDataSet1TableAdapters.genresTableAdapter genresTableAdapter;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox comboBoxGenres;

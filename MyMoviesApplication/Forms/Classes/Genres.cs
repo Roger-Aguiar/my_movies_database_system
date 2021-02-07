@@ -63,5 +63,68 @@ namespace MyMoviesApplication.Forms.Classes
             }
             return idGenre;
         }
+
+        public string GetGenre(int idGenre)
+        {
+            string genre = null;
+            string sql_query = "SELECT genre FROM genres WHERE idGenre = @idGenre";
+            string connection_string = GetStringConnection();
+            MySqlConnection connection = new MySqlConnection(connection_string);
+
+            try
+            {
+                connection.Open();
+                MySqlCommand cmd = connection.CreateCommand();
+                cmd.CommandText = sql_query;
+                cmd.Parameters.AddWithValue("@idGenre", idGenre);
+                cmd.ExecuteNonQuery();
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    reader.Read();
+                    genre = reader.ToString();
+                }
+                else
+                {
+                    genre = null;
+                }
+                connection.Close();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return genre;
+        }
+
+        public List<string> SelectGenres()
+        {
+            List<string> genres = new List<string>();
+
+            string sql_query = "SELECT genre FROM genres";
+            string connection_string = GetStringConnection();
+            MySqlConnection connection = new MySqlConnection(connection_string);
+
+            try
+            {
+                connection.Open();
+                MySqlDataAdapter adapter = new MySqlDataAdapter(sql_query, connection_string);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+
+                foreach (DataRow row in table.Rows)
+                {
+                    genres.Add(row["genre"].ToString());
+                }
+
+                connection.Close();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return genres;
+        }
     }
 }

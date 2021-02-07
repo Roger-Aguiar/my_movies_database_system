@@ -115,6 +115,35 @@ namespace MyMoviesApplication.Forms.Classes
             return idActor;
         }
 
+        public List<string> SelectActors()
+        {
+            List<string> actorsName = new List<string>();
+
+            string sql_query = "SELECT actorName FROM actors";
+            string connection_string = GetStringConnection();
+            MySqlConnection connection = new MySqlConnection(connection_string);
+
+            try
+            {
+                connection.Open();
+                MySqlDataAdapter adapter = new MySqlDataAdapter(sql_query, connection_string);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+
+                foreach(DataRow row in table.Rows)
+                {
+                    actorsName.Add(row["actorName"].ToString());
+                }
+
+                connection.Close();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return actorsName;
+        }
+
         public DataSet LoadActorsTable()
         {
             string sql_query = "SELECT idActor AS Id, actorName AS Actor, credits AS Credits, linkIMDB AS Link, registerDate AS Registered, lastUpdate AS Updated FROM actors ORDER BY actorName; ";

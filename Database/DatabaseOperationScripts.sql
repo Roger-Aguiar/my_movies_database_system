@@ -34,6 +34,7 @@ VALUES ('Absurdist/surreal/whimsical', now());
 
 INSERT INTO genres (genre, registerDate)
 VALUES ('Action', now()),
+	    ('Absurdist/surreal/whimsical', now()),
         ('Adventure', now()),
         ('Comedy', now()),
         ('Crime', now()),
@@ -64,7 +65,10 @@ FROM genres
 WHERE genre = 'Romance';
 
 SELECT * FROM movies;
+DESCRIBE movies;
 
-ALTER TABLE movies
-ADD linkIMDB VARCHAR(200)
-AFTER year;
+INSERT INTO movies (title, originalTitle, year, linkIMDB, registerDate, lastUpdate, idGenre)
+VALUES("The Expendables 2", "The Expendables 2", "2012", "https://www.imdb.com/title/tt1764651/?ref_=nm_flmg_act_37", now(), now(), 1);
+
+DELETE FROM movies
+WHERE idMovie = 2;

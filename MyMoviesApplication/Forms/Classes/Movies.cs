@@ -18,7 +18,7 @@ namespace MyMoviesApplication.Forms.Classes
     {
         public void Insert(string title, string originalTitle, string year, string linkIMDB, DateTime registerDate, DateTime lastUpdate, int idGenre)
         {
-            string sql_query = "INSERT INTO movies(title, originalTitle, year, linkIMDB, registerDate, lastUpdate, idGenre)VALUES(@title, @originalTitle, @year, @linkIMDB, @registerDate, @lastUpdate, @idgGenre)";
+            string sql_query = "INSERT INTO movies(title, originalTitle, year, linkIMDB, registerDate, lastUpdate, idGenre)VALUES(@title, @originalTitle, @year, @linkIMDB, @registerDate, @lastUpdate, @idGenre)";
             string connection_string = GetStringConnection();
             MySqlConnection connection = new MySqlConnection(connection_string);
             connection.Open();
@@ -36,10 +36,7 @@ namespace MyMoviesApplication.Forms.Classes
                 cmd.Parameters.AddWithValue("@lastUpdate", lastUpdate);
                 cmd.Parameters.AddWithValue("@idGenre", idGenre);
                 cmd.ExecuteNonQuery();
-                connection.Close();
-
-                MessageBox.Show("Operation has been completed!", "Information",
-                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
+                connection.Close();                                
             }
             catch (Exception)
             {
@@ -57,12 +54,7 @@ namespace MyMoviesApplication.Forms.Classes
         {
 
         }
-
-        public void LoadTable()
-        {
-
-        }
-
+               
         public int SelectIdMovie(string title)
         {
             int idMovie;
@@ -96,6 +88,48 @@ namespace MyMoviesApplication.Forms.Classes
                 throw;
             }
             return idMovie;
+        }
+
+        public int SelectIdGenre(string title)
+        {
+            int idGenre;
+
+            string sql_query = "SELECT idGenre FROM movies WHERE title = @title";
+            string connection_string = GetStringConnection();
+            MySqlConnection connection = new MySqlConnection(connection_string);
+
+            try
+            {
+                connection.Open();
+                MySqlCommand cmd = connection.CreateCommand();
+                cmd.CommandText = sql_query;
+                cmd.Parameters.AddWithValue("@title", title);
+                cmd.ExecuteNonQuery();
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    reader.Read();
+                    idGenre = reader.GetInt32(0);
+                }
+                else
+                {
+                    idGenre = 0;
+                }
+                connection.Close();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return idGenre;
+        }
+
+        public DataSet LoadTable()
+        {
+            string sql_query = "SELECT idMovie AS Id, title AS Title, originalTitle AS Original_title, year AS Year, linkIMDB AS Link, registerDate AS Registered, lastUpdate AS Updated FROM movies ORDER BY title; ";
+            DataSet dataSet = LoadData(sql_query);
+            return dataSet;
         }
     }//End class
 }

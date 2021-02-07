@@ -151,57 +151,30 @@
   <data name="toolStripButtonDelete.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHeSURBVDhPjZPBSxtBGMUHNmCIsBsT0Gi7WatplIUSG2iq
-        rSauMTUKKfRUqOgtOfsH+I9YYxsL9erFSg+9VQUPIRIGhYgBD4IaN23O+eBzZ8w2yWYjffBg+ea93wzM
-        LDG1TYj3QAuXc1Kv1hh16JsoJg7nIxebhHgaowexcj4V02vraaTpWbCDsDLNaMAyhdRU5R+El5Nv9dra
-        Kpqmy28g19uEfBfFBboyDa2ZQqIBOQir5VrmI1pNtVccsiO6knQuAnaZ32G1RFiIvg7B308f0Go2p5Mv
-        bdfKi1r9i9M5w4/IIS9U+PN+CducWsRqMo7VeAz12WnUo1Ooz0ziuaLUs05nlJdNcYiqQjUeN4JR1CMR
-        vJuYwLtQqM2s/NnheNjZqlxPj0aVUaiMjKGd6RMFtgiJNeKd2haEBTogw83TANqZ9svdAVlBeEd9MlzJ
-        AXzMbIMOyKYgJKjPD5fyc/wfF1shW4Iwf+JT4MIfRKsLBpS52xqH7Ln6zktKEK3OD/rrWUKiLGR8g13m
-        hyidEfYcf3k8t6fDY2j6eNC4Z6PMj2how4AYM2jN7Lvd118JcfMA+x9+er2V4rNxPBpqL5vaII7Y0dAw
-        sMy+e6BZNsUgu1Jfya5sikF2JemsWSbkHqCqem8VMBbsAAAAAElFTkSuQmCC
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHcSURBVDhPjZPNSxtBGMYHNmBQ2I0JaPzYrN/KlhKJGvzc
+        NcRoFCJ4EiztTc/9A/qPqFFjob16qeLBmx/gQSIyVIgY8CCocaM554W3O2O2STZr6QMPLO88z28GZpZY
+        2iXEdxIJZVNSQ6Q0qtF3UYydzoRvNwnxlkZvYuWLhG4Uvq0iXdXACcLKdE0HlkknxnJ/IbwcnzAKX7+g
+        ZfppFFINZcgPUZyjn8ehMpOOlSAnITVbWFtGu6k+xCE/xfo4nR4Gp8xxSM0QFqIjH+F1ZQntZnMaDjqu
+        ZecjxW23e4ofkUM+qPCyuIBVTsxjPh7FfFRHY3oSDW0MjalRvFGUYtLt1njZEoeoKuSjUTOooREO4/Pg
+        ID4Hg1Vm5Q2X621nu1J1dRGqdEOuqx+dTNsU2CJEL8VrtSsIc7RZhsf2HnQybZLfByQFYZb6ZbiXe/Bf
+        ZhvUQDYFIUb9AbiTe/F/fFUJ2RKEmUu/AreBPrQ7bUKZ31vjkF/1jTcZpQ/tvmgJFJOEaCxkfoNTZl+U
+        rgl7jkde79Pvjn60fN5i3rNZ5kc0tW5CzBlUZg48nocdQjw8wP6HQ58vd9U5gGet1WVL68Sln7V2AMsc
+        eJrLZUsMsic1ZpzKlhhkT5Kuy2VC/gBB5npRUf87RAAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="toolStripButtonUpdate.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGRSURBVDhPtVG7SgNBFJ3GWAl+hFWwMoUm+5hR0E78pVRW
-        NgoBQRGbKNgYcM2jCKkMeSm4bGZBNIUoghbJ+uqSdc5kJoG4CCk8cJnZe889c+9ZMokPThe73NrtcoMH
-        fvIT0W2bfsCtPdQUTSLwrbS6EhJ68ZhIZB5rVl+cYVTImhAKW4kZ8Z1GbtzMjbIiDQJu7gdtc/nNT80h
-        RG2l5xsHsgYxL9mRpxYQlww+eq71/M5NKpMR6HF7fbjWeCq5M0aD+l/NgGhIv9zYoVum4X3VHgrAMKkm
-        xla8SHSu7G001hw2CogIAbgtBMTOijsd9E4wS6X+H5VzOo8VKg79Uqnp0CymViFQzdEHot3UAZdhmOJG
-        opGnWQi0CvYh0W7q3yOKO4oXieu8vVnKsoEYv39bWFuSAjrqDv1uFtiW4v4Cmms59jp8nR7L5LjZesIJ
-        9WaRnWJPmIXAvVVkJ6iB07ik1bv8wuxIAGN7Z/FY3WFHlQva16KTgbHxMriyGZjcGXvBHDiM34TAHTm3
-        tJFQNAVCfgAziXAW5Gf1IwAAAABJRU5ErkJggg==
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGRSURBVDhPtVE9SwNBEN3GWAn+CKtgZQpNcne7CtqJfymV
+        lY1CQFBEEBVsDHjmYhFSeeRLIUeyB6LBQhG0SM6vLjn3bXYTiIeQwgfD7s28eTvzjozjg9P5Dje3OzzN
+        Az/5iei0DD/g5g5qiiYR+GZGXQkJm/GYSGQfXbMnzjAqZE0IhfXElPjOIDdq5umiIvUDbuwGLWPxzU/N
+        IERtqeun92QNYs1kW55aQFyy+Oh65vM7N6hMRqDLrdXBWqOp5M4YDep/NQOiIfNya4VekYb3rjUQgGFS
+        TYyteJFoX1ubaCzbbBgQEQJwWwiInRV3MuidYJZK/T9K53QWK5Rs+qVSk6FWSC1DwM3RB6Ld1AGXYZji
+        RqKap8cQqDvWPtFu6t8jiluKF4mbvLXuHLG+GL/XcFYWpICOik2/aw7bUNxfQHM5x14Hr9NDmRw1m084
+        oV4rsFPsCbMQuNcL7AQ1cKqX1L3Lz00PBTB28yweq9jsoHRBe1p0PDA2XgZXNgPjO2MvmAOH8ZsQuCPn
+        Xa0lFE2BkB/ZDG/yn7XjrQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="genresBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>420, 95</value>
-  </metadata>
-  <metadata name="my_moviesDataSet11.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>252, 95</value>
-  </metadata>
-  <metadata name="actorsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>318, 17</value>
-  </metadata>
-  <metadata name="my_moviesDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>164, 17</value>
-  </metadata>
-  <metadata name="actorsTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>481, 17</value>
-  </metadata>
-  <metadata name="getActorsToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>443, 56</value>
-  </metadata>
-  <metadata name="my_moviesDataSet1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>596, 56</value>
-  </metadata>
-  <metadata name="mymoviesDataSet1BindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 95</value>
-  </metadata>
-  <metadata name="genresTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>587, 95</value>
-  </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAgIAAAAEAIAAoCAEAFgAAACgAAACAAAAAAAEAAAEAIAAAAAAAAAABABILAAASCwAAAAAAAAAA
