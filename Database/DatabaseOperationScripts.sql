@@ -1,7 +1,7 @@
 -- Name:         Roger Silva Santos Aguiar
 -- Function:     Scripts for the operations in the database
 -- Initial date: February 3, 2021
--- Last update:  February 3, 2021
+-- Last update:  February 6, 2021
 
 USE my_movies;
 SHOW TABLES;
@@ -59,4 +59,12 @@ VALUES ('Action', now()),
 
 SELECT * FROM genres ORDER BY genre;
 
+SELECT idGenre
+FROM genres
+WHERE genre = 'Romance';
+
 SELECT * FROM movies;
+
+ALTER TABLE movies
+ADD linkIMDB VARCHAR(200)
+AFTER year;

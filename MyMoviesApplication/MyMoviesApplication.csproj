@@ -60,7 +60,9 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Classes\Actors.cs" />
+    <Compile Include="Forms\Classes\ActorsHasMovies.cs" />
     <Compile Include="Forms\Classes\DatabaseService.cs" />
+    <Compile Include="Forms\Classes\Genres.cs" />
     <Compile Include="Forms\Classes\Movies.cs" />
     <Compile Include="Forms\FormActors.cs">
       <SubType>Form</SubType>

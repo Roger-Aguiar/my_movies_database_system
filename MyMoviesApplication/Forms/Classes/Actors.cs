@@ -1,7 +1,7 @@
 ﻿///Name:         Roger Silva Santos Aguiar
 ///Function:     Actors table operation
 ///Initial date: February 4, 2021
-///Last update:  February 5, 2021
+///Last update:  February 7, 2021
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -78,6 +78,41 @@ namespace MyMoviesApplication.Forms.Classes
             {
                 throw;
             }
+        }
+
+        public int SelectIdActor(string actorName)
+        {
+            int idActor;
+
+            string sql_query = "SELECT idActor FROM actors WHERE actorName = @actorName";
+            string connection_string = GetStringConnection();
+            MySqlConnection connection = new MySqlConnection(connection_string);
+
+            try
+            {
+                connection.Open();
+                MySqlCommand cmd = connection.CreateCommand();
+                cmd.CommandText = sql_query;
+                cmd.Parameters.AddWithValue("@actorName", actorName);
+                cmd.ExecuteNonQuery();
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    reader.Read();
+                    idActor = reader.GetInt32(0);
+                }
+                else
+                {
+                    idActor = 0;
+                }
+                connection.Close();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return idActor;
         }
 
         public DataSet LoadActorsTable()

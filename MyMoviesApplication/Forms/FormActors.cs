@@ -109,7 +109,14 @@ namespace MyMoviesApplication.Forms
                
         private void FormActors_Shown(object sender, EventArgs e)
         {
-            toolStripLabelRowsIdentification.Text = "{ " + Convert.ToInt32(dataGridViewActors.CurrentRow.Index + 1) + " } of " + dataGridViewActors.Rows.Count;
+            if (dataGridViewActors.Rows.Count > 0)
+            {
+                toolStripLabelRowsIdentification.Text = "{ " + Convert.ToInt32(dataGridViewActors.CurrentRow.Index + 1) + " } of " + dataGridViewActors.Rows.Count;
+            }
+            else
+            {
+                toolStripLabelRowsIdentification.Text = "{ 0 } of 0";
+            }            
         }
     }
 }
