@@ -1,7 +1,7 @@
 ﻿///Name:         Roger Silva Santos Aguiar
 ///Function:     It manipulates all the events of the FormMovies
 ///Initial date: February 6, 2021
-///Last update:  February 7, 2021
+///Last update:  February 8, 2021
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -131,9 +131,9 @@ namespace MyMoviesApplication.Forms
 
         private void toolStripButtonSave_Click(object sender, EventArgs e)
         {           
-            int idGenre = genre.GetIdGenre(comboBoxGenres.SelectedText);
+            int idGenre = genre.GetIdGenre(comboBoxGenres.SelectedItem.ToString());
 
-            movie.Insert(textBoxTitle.Text, textBoxOriginalTitle.Text, textBoxYear.Text, textBoxLinkImdb.Text, dateTimePickerRegisterDate.Value, dateTimePickerLastUpdate.Value, (idGenre + 1));
+            movie.Insert(textBoxTitle.Text, textBoxOriginalTitle.Text, textBoxYear.Text, textBoxLinkImdb.Text, dateTimePickerRegisterDate.Value, dateTimePickerLastUpdate.Value, (idGenre));
            
             int idMovie = movie.SelectIdMovie(textBoxTitle.Text);
 

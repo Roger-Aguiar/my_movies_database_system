@@ -1,7 +1,7 @@
 ﻿///Name:         Roger Silva Santos Aguiar
 ///Function:     This class implements the operations with the Genres table
 ///Initial date: February 6, 2021
-///Last update:  February 6, 2021
+///Last update:  February 8, 2021
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,8 +48,8 @@ namespace MyMoviesApplication.Forms.Classes
                 
                 if (reader.HasRows)
                 {
-                    reader.Read();
-                    idGenre = reader.GetInt32(0);
+                    reader.Read();                   
+                    idGenre = Convert.ToInt32(reader["idGenre"]);
                 }
                 else
                 {
@@ -83,7 +83,7 @@ namespace MyMoviesApplication.Forms.Classes
                 if (reader.HasRows)
                 {
                     reader.Read();
-                    genre = reader.ToString();
+                    genre = reader["genre"].ToString();
                 }
                 else
                 {
