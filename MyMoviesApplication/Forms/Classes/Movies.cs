@@ -1,7 +1,7 @@
 ﻿///Name:         Roger Silva Santos Aguiar
 ///Function:     It implements all the operations with the Movies table
 ///Initial date: February 6, 2021
-///Last update:  February 7, 2021
+///Last update:  February 9, 2021
 
 using System;
 using System.Collections.Generic;
@@ -50,9 +50,10 @@ namespace MyMoviesApplication.Forms.Classes
 
         }
 
-        public void Delete()
+        public void Delete(int id)
         {
-
+            string sql_query = "DELETE FROM movies WHERE idMovie = @id";
+            Delete(id, sql_query);
         }
                
         public int SelectIdMovie(string title)

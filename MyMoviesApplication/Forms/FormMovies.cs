@@ -1,7 +1,7 @@
 ﻿///Name:         Roger Silva Santos Aguiar
 ///Function:     It manipulates all the events of the FormMovies
 ///Initial date: February 6, 2021
-///Last update:  February 8, 2021
+///Last update:  February 9, 2021
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -130,24 +130,33 @@ namespace MyMoviesApplication.Forms
         }
 
         private void toolStripButtonSave_Click(object sender, EventArgs e)
-        {           
-            int idGenre = genre.GetIdGenre(comboBoxGenres.SelectedItem.ToString());
-
-            movie.Insert(textBoxTitle.Text, textBoxOriginalTitle.Text, textBoxYear.Text, textBoxLinkImdb.Text, dateTimePickerRegisterDate.Value, dateTimePickerLastUpdate.Value, (idGenre));
-           
-            int idMovie = movie.SelectIdMovie(textBoxTitle.Text);
-
-            foreach(object actorName in actors)
+        {    
+            if(actors.Count == 0)
             {
-                int idActor = GetIdActor(actorName.ToString());
-                actors_has_movies.Insert(idActor, idMovie);
+                MessageBox.Show("You did not select the actor(s)! Please, select the one(s) from the list box before saving!", "Error", 
+                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            else
+            {
+                int idGenre = genre.GetIdGenre(comboBoxGenres.SelectedItem.ToString());
 
-            MessageBox.Show("Operation has been completed!", "Information",
-                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
+                movie.Insert(textBoxTitle.Text, textBoxOriginalTitle.Text, textBoxYear.Text, textBoxLinkImdb.Text, dateTimePickerRegisterDate.Value, dateTimePickerLastUpdate.Value, (idGenre));
 
-            ChangePropertiesOfControlsAfterSave();
-            LoadMoviesTable();
+                int idMovie = movie.SelectIdMovie(textBoxTitle.Text);
+
+                foreach (object actorName in actors)
+                {
+                    int idActor = GetIdActor(actorName.ToString());
+                    actors_has_movies.Insert(idActor, idMovie);
+                }
+
+                MessageBox.Show("Operation has been completed!", "Information",
+                                     MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                ChangePropertiesOfControlsAfterSave();
+                LoadMoviesTable();
+                actors.Clear();
+            }            
         }
                
         private void FormMovies_Shown(object sender, EventArgs e)
@@ -181,6 +190,23 @@ namespace MyMoviesApplication.Forms
         private void dataGridViewTable_SelectionChanged(object sender, EventArgs e)
         {
             LinkDataGridViewToFields();
+        }
+
+        private void toolStripButtonDelete_Click(object sender, EventArgs e)
+        {
+            var question = MessageBox.Show("Are you sure that you want to delete this row?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (question == DialogResult.Yes)
+            {
+                actors_has_movies.Delete(Convert.ToInt32(textBoxId.Text));
+                movie.Delete(Convert.ToInt32(textBoxId.Text));
+                MessageBox.Show("Operation has been completed!", "Information",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                LoadMoviesTable();
+                toolStripLabelRowsIdentification.Text = "{ " + Convert.ToInt32(dataGridViewTable.CurrentRow.Index + 1) +
+                                                        " } of " + dataGridViewTable.Rows.Count;
+            }
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿///Name:         Roger Silva Santos Aguiar
 ///Function:     This class implements the operations of Actors_has_Movies table
 ///Initial date: February 7, 2021
-///Last update:  February 7, 2021
+///Last update:  February 9, 2021
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,7 +35,12 @@ namespace MyMoviesApplication.Forms.Classes
             {
                 throw;
             }
+        }
 
+        public void Delete(int id)
+        {
+            string sql_query = "DELETE FROM actors_has_movies WHERE idMovie = @id";
+            Delete(id, sql_query);            
         }
     }
 }

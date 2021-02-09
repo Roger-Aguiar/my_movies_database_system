@@ -1,7 +1,7 @@
 ﻿///Name:         Roger Silva Santos Aguiar
 ///Function:     Methods and events of the Actors form 
 ///Initial date: February 3, 2021
-///Last update:  February 6, 2021
+///Last update:  February 9, 2021
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -93,11 +93,12 @@ namespace MyMoviesApplication.Forms
             if(question == DialogResult.Yes)
             {
                 actors.DeleteRow(Convert.ToInt32(textBoxActorId.Text));
+                MessageBox.Show("Operation has been completed!", "Information",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadActorsTable();
                 toolStripLabelRowsIdentification.Text = "{ " + Convert.ToInt32(dataGridViewActors.CurrentRow.Index + 1) + 
                                                         " } of " + dataGridViewActors.Rows.Count;
-            }
-           
+            }           
         }
 
         private void toolStripButtonUpdate_Click(object sender, EventArgs e)

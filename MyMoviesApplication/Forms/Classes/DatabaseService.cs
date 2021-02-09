@@ -37,8 +37,7 @@ namespace MyMoviesApplication.Forms.Classes
                 cmd.ExecuteNonQuery();
                 connection.Close();
 
-                MessageBox.Show("Operation has been completed!", "Information",
-                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
+               
             }
             catch (Exception)
             {
