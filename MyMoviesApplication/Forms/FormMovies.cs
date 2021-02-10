@@ -130,33 +130,45 @@ namespace MyMoviesApplication.Forms
         }
 
         private void toolStripButtonSave_Click(object sender, EventArgs e)
-        {    
-            if(actors.Count == 0)
+        {
+            string title = movie.SelectMovieTitle(textBoxTitle.Text).ToString();
+
+            if(title != textBoxTitle.Text.ToLower())
             {
-                MessageBox.Show("You did not select the actor(s)! Please, select the one(s) from the list box before saving!", "Error", 
-                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (actors.Count == 0)
+                {
+                    MessageBox.Show("You did not select the actor(s)! Please, select the one(s) from the list box before saving!", "Error",
+                                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    int idGenre = genre.GetIdGenre(comboBoxGenres.SelectedItem.ToString());
+
+                    movie.Insert(textBoxTitle.Text, textBoxOriginalTitle.Text, textBoxYear.Text, textBoxLinkImdb.Text, dateTimePickerRegisterDate.Value, dateTimePickerLastUpdate.Value, (idGenre));
+
+                    int idMovie = movie.SelectIdMovie(textBoxTitle.Text);
+
+                    foreach (object actorName in actors)
+                    {
+                        int idActor = GetIdActor(actorName.ToString());
+                        actors_has_movies.Insert(idActor, idMovie);
+                    }
+
+                    MessageBox.Show("Operation has been completed!", "Information",
+                                         MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    ChangePropertiesOfControlsAfterSave();
+                    LoadMoviesTable();
+                    actors.Clear();
+                }
             }
             else
             {
-                int idGenre = genre.GetIdGenre(comboBoxGenres.SelectedItem.ToString());
-
-                movie.Insert(textBoxTitle.Text, textBoxOriginalTitle.Text, textBoxYear.Text, textBoxLinkImdb.Text, dateTimePickerRegisterDate.Value, dateTimePickerLastUpdate.Value, (idGenre));
-
-                int idMovie = movie.SelectIdMovie(textBoxTitle.Text);
-
-                foreach (object actorName in actors)
-                {
-                    int idActor = GetIdActor(actorName.ToString());
-                    actors_has_movies.Insert(idActor, idMovie);
-                }
-
-                MessageBox.Show("Operation has been completed!", "Information",
-                                     MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                MessageBox.Show("You have already registered this movie.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 ChangePropertiesOfControlsAfterSave();
                 LoadMoviesTable();
                 actors.Clear();
-            }            
+            }                        
         }
                
         private void FormMovies_Shown(object sender, EventArgs e)

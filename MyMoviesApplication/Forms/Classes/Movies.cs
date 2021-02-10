@@ -118,6 +118,40 @@ namespace MyMoviesApplication.Forms.Classes
             return idMovie;
         }
 
+        public string SelectMovieTitle(string title)
+        {
+            string movieTitle;
+            string sql_query = "SELECT LOWER(title) FROM movies WHERE title = @title";
+            string connection_string = GetStringConnection();
+            MySqlConnection connection = new MySqlConnection(connection_string);
+                        
+            try
+            {
+                connection.Open();
+                MySqlCommand cmd = connection.CreateCommand();
+                cmd.CommandText = sql_query;
+                cmd.Parameters.AddWithValue("@title", title);
+                cmd.ExecuteNonQuery();
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    reader.Read();
+                    movieTitle = reader.GetString(0);
+                }
+                else
+                {
+                    movieTitle = "";
+                }
+                connection.Close();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return movieTitle;
+        }
+
         public int SelectIdGenre(string title)
         {
             int idGenre;
