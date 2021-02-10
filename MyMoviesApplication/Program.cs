@@ -18,8 +18,8 @@ namespace MyMoviesApplication
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form1());
-            Application.Run(new FormMovies());
-            //Application.Run(new  FormActors());
+            //Application.Run(new FormMovies());
+            Application.Run(new  FormActors());
         }
     }
 }

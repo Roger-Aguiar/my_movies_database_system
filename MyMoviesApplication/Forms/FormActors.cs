@@ -1,7 +1,7 @@
 ﻿///Name:         Roger Silva Santos Aguiar
 ///Function:     Methods and events of the Actors form 
 ///Initial date: February 3, 2021
-///Last update:  February 9, 2021
+///Last update:  February 10, 2021
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -77,13 +77,24 @@ namespace MyMoviesApplication.Forms
 
         private void toolStripButtonSave_Click(object sender, EventArgs e)
         {
-            actors.InsertRow(textBoxActor.Text, Convert.ToInt32(textBoxCredits.Text), textBoxLinkImdb.Text, dateTimePickerRegisterDate.Value, dateTimePickerRegisterDate.Value);
-            LoadActorsTable();
-            toolStripLabelRowsIdentification.Text = "{ " + Convert.ToInt32(dataGridViewActors.CurrentRow.Index + 1) + " } of " + dataGridViewActors.Rows.Count;
-            toolStripButtonAdd.Enabled = true;
-            toolStripButtonUpdate.Enabled = true;
-            toolStripButtonDelete.Enabled = true;
-            toolStripButtonSave.Enabled = false;
+            string actorName = actors.SelectActorName(textBoxActor.Text);
+            
+            if(actorName != textBoxActor.Text.ToLower())
+            {
+                actors.InsertRow(textBoxActor.Text, Convert.ToInt32(textBoxCredits.Text), textBoxLinkImdb.Text, dateTimePickerRegisterDate.Value, dateTimePickerRegisterDate.Value);
+                LoadActorsTable();
+                toolStripLabelRowsIdentification.Text = "{ " + Convert.ToInt32(dataGridViewActors.CurrentRow.Index + 1) + " } of " + dataGridViewActors.Rows.Count;
+                toolStripButtonAdd.Enabled = true;
+                toolStripButtonUpdate.Enabled = true;
+                toolStripButtonDelete.Enabled = true;
+                toolStripButtonSave.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("You have already registered this actor.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                LoadActorsTable();
+            }
+            
         }
 
         private void toolStripButtonDelete_Click(object sender, EventArgs e)
