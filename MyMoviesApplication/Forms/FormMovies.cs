@@ -208,5 +208,12 @@ namespace MyMoviesApplication.Forms
                                                         " } of " + dataGridViewTable.Rows.Count;
             }
         }
+
+        private void toolStripButtonUpdate_Click(object sender, EventArgs e)
+        {
+            int idGenre = genre.GetIdGenre(comboBoxGenres.SelectedItem.ToString());
+            movie.Update(Convert.ToInt32(textBoxId.Text), textBoxTitle.Text, textBoxOriginalTitle.Text, textBoxYear.Text, textBoxLinkImdb.Text, dateTimePickerRegisterDate.Value, dateTimePickerLastUpdate.Value, idGenre);
+            LoadMoviesTable();
+        }
     }
 }

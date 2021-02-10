@@ -1,7 +1,7 @@
 ﻿///Name:         Roger Silva Santos Aguiar
 ///Function:     It implements all the operations with the Movies table
 ///Initial date: February 6, 2021
-///Last update:  February 9, 2021
+///Last update:  February 10, 2021
 
 using System;
 using System.Collections.Generic;
@@ -45,9 +45,36 @@ namespace MyMoviesApplication.Forms.Classes
 
         }
 
-        public void Update()
+        public void Update(int idMovie, string title, string originalTitle, string year, string linkIMDB, DateTime registerDate, DateTime lastUpdate, int idGenre)
         {
+            string sql_query = "UPDATE movies SET title = @title, originalTitle = @originalTitle, year = @year, linkIMDB = @linkIMDB, registerDate = @registerDate, lastUpdate = @lastUpdate, idGenre = @idGenre WHERE idMovie = @idMovie;";
+            string connection_string = GetStringConnection();
+            MySqlConnection connection = new MySqlConnection(connection_string);
+            connection.Open();
 
+            try
+            {
+                MySqlCommand cmd = connection.CreateCommand();
+                cmd.CommandText = sql_query;
+
+                cmd.Parameters.AddWithValue("@idMovie", idMovie);
+                cmd.Parameters.AddWithValue("@title", title);
+                cmd.Parameters.AddWithValue("@originalTitle", originalTitle);
+                cmd.Parameters.AddWithValue("@linkIMDB", linkIMDB);
+                cmd.Parameters.AddWithValue("@year", year);
+                cmd.Parameters.AddWithValue("@registerDate", registerDate);
+                cmd.Parameters.AddWithValue("@lastUpdate", lastUpdate);
+                cmd.Parameters.AddWithValue("@idGenre", idGenre);
+                cmd.ExecuteNonQuery();
+                connection.Close();
+
+                MessageBox.Show("Operation has been completed!", "Information",
+                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         public void Delete(int id)

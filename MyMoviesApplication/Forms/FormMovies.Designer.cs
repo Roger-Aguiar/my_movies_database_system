@@ -141,6 +141,7 @@ namespace MyMoviesApplication.Forms
             this.toolStripButtonUpdate.Name = "toolStripButtonUpdate";
             this.toolStripButtonUpdate.Size = new System.Drawing.Size(23, 22);
             this.toolStripButtonUpdate.Text = "Update row";
+            this.toolStripButtonUpdate.Click += new System.EventHandler(this.toolStripButtonUpdate_Click);
             // 
             // panel1
             // 
