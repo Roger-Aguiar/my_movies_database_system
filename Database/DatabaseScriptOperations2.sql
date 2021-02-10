@@ -23,3 +23,5 @@ SELECT * FROM actors_has_movies;
 
 DELETE FROM actors_has_movies
 WHERE idMovie = 19;
+
+SELECT * FROM genres;

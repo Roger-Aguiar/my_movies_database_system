@@ -70,6 +70,12 @@
     <Compile Include="Forms\FormActors.Designer.cs">
       <DependentUpon>FormActors.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormGenres.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormGenres.Designer.cs">
+      <DependentUpon>FormGenres.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormMovies.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormActors.resx">
       <DependentUpon>FormActors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormGenres.resx">
+      <DependentUpon>FormGenres.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormMovies.resx">
       <DependentUpon>FormMovies.cs</DependentUpon>
