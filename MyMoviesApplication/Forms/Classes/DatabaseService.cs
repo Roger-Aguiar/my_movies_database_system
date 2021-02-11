@@ -35,9 +35,7 @@ namespace MyMoviesApplication.Forms.Classes
 
                 cmd.Parameters.AddWithValue("@id", id);
                 cmd.ExecuteNonQuery();
-                connection.Close();
-
-               
+                connection.Close();               
             }
             catch (Exception)
             {

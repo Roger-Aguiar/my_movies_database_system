@@ -1,7 +1,7 @@
 ﻿///Name:         Roger Silva Santos Aguiar
 ///Function:     This class implements the operations with the Genres table
 ///Initial date: February 6, 2021
-///Last update:  February 8, 2021
+///Last update:  February 11, 2021
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,12 +32,12 @@ namespace MyMoviesApplication.Forms.Classes
                 
                 cmd.ExecuteNonQuery();
                 connection.Close();
+                MessageBox.Show("Operation has been completed!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception)
             {
                 throw;
-            }
-            MessageBox.Show("Operation has been completed!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }            
         }
 
         public void Delete(int id)
@@ -73,7 +73,6 @@ namespace MyMoviesApplication.Forms.Classes
             {
                 throw;
             }
-
         }
 
         public DataSet LoadTable()
@@ -178,6 +177,40 @@ namespace MyMoviesApplication.Forms.Classes
                 throw;
             }
             return genres;
+        }
+
+        public string SelectGenreToLower(string genre)
+        {
+            string lowerGenre;
+            string sql_query = "SELECT LOWER(genre) FROM genres WHERE genre = @genre";
+            string connection_string = GetStringConnection();
+            MySqlConnection connection = new MySqlConnection(connection_string);
+
+            try
+            {
+                connection.Open();
+                MySqlCommand cmd = connection.CreateCommand();
+                cmd.CommandText = sql_query;
+                cmd.Parameters.AddWithValue("@genre", genre);
+                cmd.ExecuteNonQuery();
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    reader.Read();
+                    lowerGenre = reader.GetString(0);
+                }
+                else
+                {
+                    lowerGenre = "";
+                }
+                connection.Close();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return lowerGenre;
         }
     }
 }

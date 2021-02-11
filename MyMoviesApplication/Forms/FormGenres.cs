@@ -26,23 +26,11 @@ namespace MyMoviesApplication.Forms
 
         //********************************************************************************************************
         //Private methods
-
-        private void DisplayNumberOfRows()
-        {
-            if (dataGridViewTable.Rows.Count > 0)
-            {
-                toolStripLabelRowsIdentification.Text = "{ " + Convert.ToInt32(dataGridViewTable.CurrentRow.Index + 1) + " } of " + dataGridViewTable.Rows.Count;
-            }
-            else
-            {
-                toolStripLabelRowsIdentification.Text = "{ 0 } of 0";
-            }
-        }
-
+                
         private void LoadGenresTable()
         {
             DataSet dataSet = genre.LoadTable();
-            dataGridViewTable.DataSource = dataSet.Tables[0].DefaultView;
+            dataGridViewTable.DataSource = dataSet.Tables[0].DefaultView;            
         }
 
         private void LinkDataGridViewToFields()
@@ -54,6 +42,10 @@ namespace MyMoviesApplication.Forms
                 textBoxIdGenre.Text = dataGridViewTable.Rows[dataGridViewTable.CurrentRow.Index].Cells[0].Value.ToString();
                 textBoxGenre.Text = dataGridViewTable.Rows[dataGridViewTable.CurrentRow.Index].Cells[1].Value.ToString();                
                 dateTimePickerRegisterDate.Value = Convert.ToDateTime(dataGridViewTable.Rows[dataGridViewTable.CurrentRow.Index].Cells[2].Value.ToString());                
+            }
+            else
+            {
+                toolStripLabelRowsIdentification.Text = "{ 0 } of 0";
             }
         }
 
@@ -85,8 +77,8 @@ namespace MyMoviesApplication.Forms
         //Events
 
         private void FormGenres_Shown(object sender, EventArgs e)
-        {
-            DisplayNumberOfRows();            
+        {                  
+            LinkDataGridViewToFields();
         }
 
         private void dataGridViewTable_SelectionChanged(object sender, EventArgs e)
@@ -102,10 +94,22 @@ namespace MyMoviesApplication.Forms
 
         private void toolStripButtonSave_Click(object sender, EventArgs e)
         {
-            genre.Insert(textBoxGenre.Text, dateTimePickerRegisterDate.Value);
-            ChangeStateButtonsAfterSave();
-            LoadGenresTable();
-            LoadGenresTable();
+            string lowerGenre = genre.SelectGenreToLower(textBoxGenre.Text);
+
+            if (lowerGenre != textBoxGenre.Text.ToLower())
+            {
+                genre.Insert(textBoxGenre.Text, dateTimePickerRegisterDate.Value);
+                ChangeStateButtonsAfterSave();
+                LoadGenresTable();
+                LinkDataGridViewToFields();
+            }
+            else
+            {
+                MessageBox.Show("You have already registered this genre!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ChangeStateButtonsAfterSave();
+                LoadGenresTable();
+                LinkDataGridViewToFields();
+            }            
         }
 
         private void toolStripButtonDelete_Click(object sender, EventArgs e)
@@ -116,7 +120,7 @@ namespace MyMoviesApplication.Forms
             {
                 genre.Delete(Convert.ToInt32(textBoxIdGenre.Text));
                 LoadGenresTable();
-                LoadGenresTable();
+                LinkDataGridViewToFields();
             }
         }
 
@@ -124,6 +128,7 @@ namespace MyMoviesApplication.Forms
         {
             genre.Update(Convert.ToInt32(textBoxIdGenre.Text), textBoxGenre.Text, dateTimePickerRegisterDate.Value);
             LoadGenresTable();
+            LinkDataGridViewToFields();
         }
     }
 }

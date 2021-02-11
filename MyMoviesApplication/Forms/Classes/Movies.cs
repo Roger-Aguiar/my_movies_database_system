@@ -1,7 +1,7 @@
 ﻿///Name:         Roger Silva Santos Aguiar
 ///Function:     It implements all the operations with the Movies table
 ///Initial date: February 6, 2021
-///Last update:  February 10, 2021
+///Last update:  February 11, 2021
 
 using System;
 using System.Collections.Generic;
@@ -42,7 +42,6 @@ namespace MyMoviesApplication.Forms.Classes
             {
                 throw;
             }
-
         }
 
         public void Update(int idMovie, string title, string originalTitle, string year, string linkIMDB, DateTime registerDate, DateTime lastUpdate, int idGenre)
