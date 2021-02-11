@@ -1,4 +1,8 @@
-﻿using System;
+﻿///Name:         Roger Silva Santos Aguiar
+///Function:     This is the menu form, it has the buttons to open the other forms.
+///Initial date: February 11, 2021
+///Last update:  February 11, 2021
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,13 +14,36 @@ using System.Windows.Forms;
 
 namespace MyMoviesApplication
 {
-    public partial class Form1 : Form
+    public partial class FormMenu : Form
     {
-        public Form1()
+        public FormMenu()
         {
             InitializeComponent();
-            var actors = new Forms.FormMovies();
+            //var actors = new Forms.FormMovies();
+            //actors.Show();
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void buttonAddNewActor_Click(object sender, EventArgs e)
+        {
+            var actors = new Forms.FormActors();
             actors.Show();
+        }
+
+        private void buttonAddNewMovie_Click(object sender, EventArgs e)
+        {
+            var movies = new Forms.FormMovies();
+            movies.Show();
+        }
+
+        private void buttonAddNewGenre_Click(object sender, EventArgs e)
+        {
+            var genres = new Forms.FormGenres();
+            genres.Show();
         }
     }
 }

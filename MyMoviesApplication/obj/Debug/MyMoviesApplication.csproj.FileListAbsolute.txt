@@ -2,7 +2,6 @@ C:\Users\Roger\Desktop\Files\My projects\My_movies\Application\MyMoviesApplicati
 C:\Users\Roger\Desktop\Files\My projects\My_movies\Application\MyMoviesApplication\bin\Debug\MyMoviesApplication.exe
 C:\Users\Roger\Desktop\Files\My projects\My_movies\Application\MyMoviesApplication\bin\Debug\MyMoviesApplication.pdb
 C:\Users\Roger\Desktop\Files\My projects\My_movies\Application\MyMoviesApplication\obj\Debug\MyMoviesApplication.csprojAssemblyReference.cache
-C:\Users\Roger\Desktop\Files\My projects\My_movies\Application\MyMoviesApplication\obj\Debug\MyMoviesApplication.Form1.resources
 C:\Users\Roger\Desktop\Files\My projects\My_movies\Application\MyMoviesApplication\obj\Debug\MyMoviesApplication.Properties.Resources.resources
 C:\Users\Roger\Desktop\Files\My projects\My_movies\Application\MyMoviesApplication\obj\Debug\MyMoviesApplication.csproj.GenerateResource.cache
 C:\Users\Roger\Desktop\Files\My projects\My_movies\Application\MyMoviesApplication\obj\Debug\MyMoviesApplication.csproj.CoreCompileInputs.cache
@@ -29,3 +28,7 @@ C:\Users\Roger\Desktop\Files\My projects\My_movies\Application\MyMoviesApplicati
 C:\Users\Roger\Desktop\Files\My projects\My_movies\Application\MyMoviesApplication\obj\Debug\MyMoviesApplication.csproj.CopyComplete
 C:\Users\Roger\Desktop\Files\My projects\My_movies\Application\MyMoviesApplication\obj\Debug\MyMoviesApplication.Forms.FormMovies.resources
 C:\Users\Roger\Desktop\Files\My projects\My_movies\Application\MyMoviesApplication\obj\Debug\MyMoviesApplication.Forms.FormGenres.resources
+C:\Users\Roger\Desktop\Files\My projects\My_movies\Application\MyMoviesApplication\obj\Debug\MyMoviesApplication.FormMenu.resources
+C:\Users\Roger\Desktop\Files\My projects\My_movies\Application\MyMoviesApplication\bin\Debug\pt-BR\MyMoviesApplication.resources.dll
+C:\Users\Roger\Desktop\Files\My projects\My_movies\Application\MyMoviesApplication\obj\Debug\MyMoviesApplication.FormMenu.pt-BR.resources
+C:\Users\Roger\Desktop\Files\My projects\My_movies\Application\MyMoviesApplication\obj\Debug\pt-BR\MyMoviesApplication.resources.dll
