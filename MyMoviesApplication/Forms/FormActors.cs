@@ -93,8 +93,7 @@ namespace MyMoviesApplication.Forms
             {
                 MessageBox.Show("You have already registered this actor.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 LoadActorsTable();
-            }
-            
+            }            
         }
 
         private void toolStripButtonDelete_Click(object sender, EventArgs e)

@@ -1,7 +1,7 @@
 ﻿///Name:         Roger Silva Santos Aguiar
 ///Function:     It manipulates all the events of the FormMovies
 ///Initial date: February 6, 2021
-///Last update:  February 9, 2021
+///Last update:  February 11, 2021
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -159,6 +159,7 @@ namespace MyMoviesApplication.Forms
 
                     ChangePropertiesOfControlsAfterSave();
                     LoadMoviesTable();
+                    LinkDataGridViewToFields();
                     actors.Clear();
                 }
             }
@@ -226,6 +227,7 @@ namespace MyMoviesApplication.Forms
             int idGenre = genre.GetIdGenre(comboBoxGenres.SelectedItem.ToString());
             movie.Update(Convert.ToInt32(textBoxId.Text), textBoxTitle.Text, textBoxOriginalTitle.Text, textBoxYear.Text, textBoxLinkImdb.Text, dateTimePickerRegisterDate.Value, dateTimePickerLastUpdate.Value, idGenre);
             LoadMoviesTable();
+            LinkDataGridViewToFields();
         }
     }
 }
