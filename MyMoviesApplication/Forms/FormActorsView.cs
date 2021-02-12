@@ -1,4 +1,8 @@
-﻿using System;
+﻿///Name:         Roger Silva Santos Aguiar
+///Function:     Load actors view
+///Initial date: February 12, 2021
+///Last update:  February 12, 2021
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +16,7 @@ namespace MyMoviesApplication.Forms
 {
     public partial class FormActorsView : Form
     {
-        private Classes.ActorsView view = new Classes.ActorsView();
+        private readonly Classes.ActorsView view = new Classes.ActorsView();
 
         public FormActorsView()
         {
