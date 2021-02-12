@@ -45,5 +45,11 @@ namespace MyMoviesApplication
             var genres = new Forms.FormGenres();
             genres.Show();
         }
+
+        private void buttonDisplayActors_Click(object sender, EventArgs e)
+        {
+            var actorsView = new Forms.FormActorsView();
+            actorsView.Show();
+        }
     }
 }
