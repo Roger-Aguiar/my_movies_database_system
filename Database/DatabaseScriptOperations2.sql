@@ -49,15 +49,17 @@ select * from Actors_in_table;
 
 -- This view displays all the movies and the actors of each movie
 CREATE VIEW movies_by_actor
-AS SELECT movies.title, movies.linkIMDB, actors.actorName
+AS SELECT movies.title AS Title, movies.linkIMDB AS Link, actors.actorName AS Actor
 FROM movies, actors, actors_has_movies
 WHERE movies.idMovie = actors_has_movies.idMovie AND 
 	  actors.idActor = actors_has_movies.idActor;
 
+DROP VIEW movies_by_actor;
+
 SELECT * FROM movies_by_actor;
 
-SELECT title, linkIMDB FROM movies_by_actor
-WHERE actorName = "Jackie Chan";
+SELECT Title, Link FROM movies_by_actor
+WHERE Actor = "Dick Rienstra";
 
 -- This view displays the movies by selected genre
 CREATE VIEW movies_by_genre

@@ -1,7 +1,7 @@
 ﻿///Name:         Roger Silva Santos Aguiar
 ///Function:     Actors table operation
 ///Initial date: February 4, 2021
-///Last update:  February 10, 2021
+///Last update:  February 12, 2021
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -119,7 +119,7 @@ namespace MyMoviesApplication.Forms.Classes
         {
             List<string> actorsName = new List<string>();
 
-            string sql_query = "SELECT actorName FROM actors";
+            string sql_query = "SELECT actorName FROM actors ORDER BY actorName";
             string connection_string = GetStringConnection();
             MySqlConnection connection = new MySqlConnection(connection_string);
 

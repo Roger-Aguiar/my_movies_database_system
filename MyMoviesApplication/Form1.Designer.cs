@@ -102,6 +102,7 @@ namespace MyMoviesApplication
             resources.ApplyResources(this.buttonDisplayMovies, "buttonDisplayMovies");
             this.buttonDisplayMovies.Name = "buttonDisplayMovies";
             this.buttonDisplayMovies.UseVisualStyleBackColor = true;
+            this.buttonDisplayMovies.Click += new System.EventHandler(this.buttonDisplayMovies_Click);
             // 
             // buttonDisplayActors
             // 

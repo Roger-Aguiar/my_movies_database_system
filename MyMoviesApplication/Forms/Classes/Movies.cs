@@ -1,7 +1,7 @@
 ﻿///Name:         Roger Silva Santos Aguiar
 ///Function:     It implements all the operations with the Movies table
 ///Initial date: February 6, 2021
-///Last update:  February 11, 2021
+///Last update:  February 12, 2021
 
 using System;
 using System.Collections.Generic;
@@ -184,6 +184,35 @@ namespace MyMoviesApplication.Forms.Classes
                 throw;
             }
             return idGenre;
+        }
+
+        public List<string> SelectMovieTitle()
+        {
+            List<string> movies = new List<string>();
+
+            string sql_query = "SELECT title FROM movies ORDER BY title";
+            string connection_string = GetStringConnection();
+            MySqlConnection connection = new MySqlConnection(connection_string);
+
+            try
+            {
+                connection.Open();
+                MySqlDataAdapter adapter = new MySqlDataAdapter(sql_query, connection_string);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+
+                foreach (DataRow row in table.Rows)
+                {
+                    movies.Add(row["title"].ToString());
+                }
+
+                connection.Close();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return movies;
         }
 
         public DataSet LoadTable()

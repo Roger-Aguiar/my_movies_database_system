@@ -62,6 +62,7 @@
     <Compile Include="Forms\Classes\Actors.cs" />
     <Compile Include="Forms\Classes\ActorsHasMovies.cs" />
     <Compile Include="Forms\Classes\ActorsView.cs" />
+    <Compile Include="Forms\Classes\ClassMoviesView.cs" />
     <Compile Include="Forms\Classes\DatabaseService.cs" />
     <Compile Include="Forms\Classes\Genres.cs" />
     <Compile Include="Forms\Classes\Movies.cs" />
@@ -88,6 +89,12 @@
     </Compile>
     <Compile Include="Forms\FormMovies.Designer.cs">
       <DependentUpon>FormMovies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormMoviesView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormMoviesView.Designer.cs">
+      <DependentUpon>FormMoviesView.cs</DependentUpon>
     </Compile>
     <Compile Include="my_moviesDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -118,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormMovies.resx">
       <DependentUpon>FormMovies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormMoviesView.resx">
+      <DependentUpon>FormMoviesView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

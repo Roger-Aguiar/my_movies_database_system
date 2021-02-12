@@ -33,3 +33,4 @@ C:\Users\Roger\Desktop\Files\My projects\My_movies\Application\MyMoviesApplicati
 C:\Users\Roger\Desktop\Files\My projects\My_movies\Application\MyMoviesApplication\obj\Debug\MyMoviesApplication.FormMenu.pt-BR.resources
 C:\Users\Roger\Desktop\Files\My projects\My_movies\Application\MyMoviesApplication\obj\Debug\pt-BR\MyMoviesApplication.resources.dll
 C:\Users\Roger\Desktop\Files\My projects\My_movies\Application\MyMoviesApplication\obj\Debug\MyMoviesApplication.Forms.FormActorsView.resources
+C:\Users\Roger\Desktop\Files\My projects\My_movies\Application\MyMoviesApplication\obj\Debug\MyMoviesApplication.Forms.FormMoviesView.resources

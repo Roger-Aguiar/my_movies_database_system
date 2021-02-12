@@ -18,9 +18,7 @@ namespace MyMoviesApplication
     {
         public FormMenu()
         {
-            InitializeComponent();
-            //var actors = new Forms.FormMovies();
-            //actors.Show();
+            InitializeComponent();            
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
@@ -50,6 +48,12 @@ namespace MyMoviesApplication
         {
             var actorsView = new Forms.FormActorsView();
             actorsView.Show();
+        }
+
+        private void buttonDisplayMovies_Click(object sender, EventArgs e)
+        {
+            var moviesView = new Forms.FormMoviesView();
+            moviesView.Show();
         }
     }
 }
