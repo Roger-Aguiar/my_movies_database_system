@@ -27,7 +27,7 @@ namespace MyMoviesApplication.Forms
         public FormMovies()
         {
             InitializeComponent();
-            LoadMoviesTable();
+            LoadMoviesTable();            
         }
 
         private void ChangePropertiesOfControlsAfterAdd()
@@ -178,6 +178,8 @@ namespace MyMoviesApplication.Forms
             FillComboBoxGenres();
             Size = new Size(770, 500);
             DisplayNumberOfRows();
+            int idGenre = movie.SelectIdGenre(textBoxTitle.Text);
+            comboBoxGenres.Text = genre.GetGenre(idGenre);
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
