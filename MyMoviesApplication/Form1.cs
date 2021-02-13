@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace MyMoviesApplication
 {
@@ -18,7 +19,18 @@ namespace MyMoviesApplication
     {
         public FormMenu()
         {
-            InitializeComponent();            
+            Thread t = new Thread(new ThreadStart(StartSplashScreen));
+            t.Start();
+            Thread.Sleep(5000);
+                
+            InitializeComponent();
+
+            t.Abort();
+        }
+                
+        private void StartSplashScreen()
+        {
+            Application.Run(new Forms.FormSplashScreen());
         }
 
         private void buttonExit_Click(object sender, EventArgs e)

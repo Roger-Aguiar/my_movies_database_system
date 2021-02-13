@@ -150,7 +150,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="buttonAddNewGenre.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 14.25pt</value>
@@ -160,10 +160,10 @@
     <value>NoControl</value>
   </data>
   <data name="buttonAddNewGenre.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 106</value>
+    <value>14, 128</value>
   </data>
   <data name="buttonAddNewGenre.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 41</value>
+    <value>193, 52</value>
   </data>
   <data name="buttonAddNewGenre.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -190,10 +190,10 @@
     <value>NoControl</value>
   </data>
   <data name="buttonAddNewMovie.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 59</value>
+    <value>14, 70</value>
   </data>
   <data name="buttonAddNewMovie.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 41</value>
+    <value>193, 52</value>
   </data>
   <data name="buttonAddNewMovie.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -220,7 +220,7 @@
     <value>13, 12</value>
   </data>
   <data name="buttonAddNewActor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 41</value>
+    <value>193, 52</value>
   </data>
   <data name="buttonAddNewActor.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -244,7 +244,7 @@
     <value>12, 56</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 163</value>
+    <value>224, 201</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -259,36 +259,36 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
-  <data name="buttonDisplayGenres.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="buttonExit.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 14.25pt</value>
   </data>
-  <data name="buttonDisplayGenres.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="buttonExit.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="buttonDisplayGenres.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 106</value>
+  <data name="buttonExit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 128</value>
   </data>
-  <data name="buttonDisplayGenres.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 41</value>
+  <data name="buttonExit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 52</value>
   </data>
-  <data name="buttonDisplayGenres.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="buttonExit.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
-  <data name="buttonDisplayGenres.Text" xml:space="preserve">
-    <value>Display gen&amp;res</value>
+  <data name="buttonExit.Text" xml:space="preserve">
+    <value>&amp;Exit</value>
   </data>
-  <data name="&gt;&gt;buttonDisplayGenres.Name" xml:space="preserve">
-    <value>buttonDisplayGenres</value>
+  <data name="&gt;&gt;buttonExit.Name" xml:space="preserve">
+    <value>buttonExit</value>
   </data>
-  <data name="&gt;&gt;buttonDisplayGenres.Type" xml:space="preserve">
+  <data name="&gt;&gt;buttonExit.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;buttonDisplayGenres.Parent" xml:space="preserve">
+  <data name="&gt;&gt;buttonExit.Parent" xml:space="preserve">
     <value>panel2</value>
   </data>
-  <data name="&gt;&gt;buttonDisplayGenres.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;buttonExit.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="buttonDisplayMovies.Font" type="System.Drawing.Font, System.Drawing">
@@ -298,10 +298,10 @@
     <value>NoControl</value>
   </data>
   <data name="buttonDisplayMovies.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 59</value>
+    <value>14, 70</value>
   </data>
   <data name="buttonDisplayMovies.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 41</value>
+    <value>193, 52</value>
   </data>
   <data name="buttonDisplayMovies.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -331,7 +331,7 @@
     <value>13, 12</value>
   </data>
   <data name="buttonDisplayActors.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 41</value>
+    <value>193, 52</value>
   </data>
   <data name="buttonDisplayActors.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -355,7 +355,7 @@
     <value>253, 56</value>
   </data>
   <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 163</value>
+    <value>224, 201</value>
   </data>
   <data name="panel2.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -370,57 +370,6 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="buttonExit.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 14.25pt</value>
-  </data>
-  <data name="buttonExit.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="buttonExit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 9</value>
-  </data>
-  <data name="buttonExit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>433, 47</value>
-  </data>
-  <data name="buttonExit.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="buttonExit.Text" xml:space="preserve">
-    <value>&amp;Exit</value>
-  </data>
-  <data name="&gt;&gt;buttonExit.Name" xml:space="preserve">
-    <value>buttonExit</value>
-  </data>
-  <data name="&gt;&gt;buttonExit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonExit.Parent" xml:space="preserve">
-    <value>panel3</value>
-  </data>
-  <data name="&gt;&gt;buttonExit.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 228</value>
-  </data>
-  <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>464, 63</value>
-  </data>
-  <data name="panel3.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;panel3.Name" xml:space="preserve">
-    <value>panel3</value>
-  </data>
-  <data name="&gt;&gt;panel3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel3.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panel3.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -430,7 +379,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>489, 303</value>
+    <value>489, 269</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
