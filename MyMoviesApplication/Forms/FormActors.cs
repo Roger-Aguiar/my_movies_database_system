@@ -1,7 +1,7 @@
 ﻿///Name:         Roger Silva Santos Aguiar
 ///Function:     Methods and events of the Actors form 
 ///Initial date: February 3, 2021
-///Last update:  February 10, 2021
+///Last update:  February 13, 2021
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,10 +29,16 @@ namespace MyMoviesApplication.Forms
             textBoxActor.Focus();
         }
 
+        private void DisplayNumberOfRows()
+        {
+            toolStripLabelRowsIdentification.Text = "{ " + Convert.ToInt32(dataGridViewActors.CurrentRow.Index + 1) + " } of " + 
+                                                     dataGridViewActors.Rows.Count;
+        }
+
         private void LoadActorsTable()
         {
             DataSet dataSet = actors.LoadActorsTable();
-            dataGridViewActors.DataSource = dataSet.Tables[0].DefaultView;
+            dataGridViewActors.DataSource = dataSet.Tables[0].DefaultView;            
         }
 
         private void LinkDataGridViewToFields()
@@ -48,6 +54,25 @@ namespace MyMoviesApplication.Forms
                 dateTimePickerRegisterDate.Value = Convert.ToDateTime(dataGridViewActors.Rows[dataGridViewActors.CurrentRow.Index].Cells[4].Value.ToString());
                 dateTimePickerLastUpdate.Value = Convert.ToDateTime(dataGridViewActors.Rows[dataGridViewActors.CurrentRow.Index].Cells[5].Value.ToString());
             }                                   
+        }
+
+        private void ChangeStateButtonsAfterSave()
+        {
+            toolStripLabelRowsIdentification.Text = "{ " + Convert.ToInt32(dataGridViewActors.CurrentRow.Index + 1) + " } of " + dataGridViewActors.Rows.Count;
+            toolStripButtonAdd.Enabled = true;
+            toolStripButtonUpdate.Enabled = true;
+            toolStripButtonDelete.Enabled = true;
+            toolStripButtonSave.Enabled = false;
+        }
+
+        private void ChangeStateButtonsBeforeSave()
+        {
+            toolStripButtonAdd.Enabled = false;
+            toolStripButtonUpdate.Enabled = false;
+            toolStripButtonDelete.Enabled = false;
+            toolStripButtonSave.Enabled = true;
+            dateTimePickerRegisterDate.Value = DateTime.Now;
+            dateTimePickerLastUpdate.Value = DateTime.Now;
         }
 
         //**************************************************************************************************************
@@ -67,12 +92,7 @@ namespace MyMoviesApplication.Forms
         private void toolStripButtonAdd_Click(object sender, EventArgs e)
         {
             ClearControls();
-            toolStripButtonAdd.Enabled = false;
-            toolStripButtonUpdate.Enabled = false;
-            toolStripButtonDelete.Enabled = false;
-            toolStripButtonSave.Enabled = true;
-            dateTimePickerRegisterDate.Value = DateTime.Now;
-            dateTimePickerLastUpdate.Value = DateTime.Now;
+            ChangeStateButtonsBeforeSave();
         }
 
         private void toolStripButtonSave_Click(object sender, EventArgs e)
@@ -83,16 +103,13 @@ namespace MyMoviesApplication.Forms
             {
                 actors.InsertRow(textBoxActor.Text, Convert.ToInt32(textBoxCredits.Text), textBoxLinkImdb.Text, dateTimePickerRegisterDate.Value, dateTimePickerRegisterDate.Value);
                 LoadActorsTable();
-                toolStripLabelRowsIdentification.Text = "{ " + Convert.ToInt32(dataGridViewActors.CurrentRow.Index + 1) + " } of " + dataGridViewActors.Rows.Count;
-                toolStripButtonAdd.Enabled = true;
-                toolStripButtonUpdate.Enabled = true;
-                toolStripButtonDelete.Enabled = true;
-                toolStripButtonSave.Enabled = false;
+                ChangeStateButtonsAfterSave();
             }
             else
             {
                 MessageBox.Show("You have already registered this actor.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 LoadActorsTable();
+                ChangeStateButtonsAfterSave();
             }            
         }
 
@@ -106,8 +123,7 @@ namespace MyMoviesApplication.Forms
                 MessageBox.Show("Operation has been completed!", "Information",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadActorsTable();
-                toolStripLabelRowsIdentification.Text = "{ " + Convert.ToInt32(dataGridViewActors.CurrentRow.Index + 1) + 
-                                                        " } of " + dataGridViewActors.Rows.Count;
+                DisplayNumberOfRows();
             }           
         }
 
@@ -115,7 +131,7 @@ namespace MyMoviesApplication.Forms
         {
             actors.Update(Convert.ToInt32(textBoxActorId.Text), textBoxActor.Text, Convert.ToInt32(textBoxCredits.Text), textBoxLinkImdb.Text, dateTimePickerRegisterDate.Value, dateTimePickerLastUpdate.Value);
             LoadActorsTable();
-            toolStripLabelRowsIdentification.Text = "{ " + Convert.ToInt32(dataGridViewActors.CurrentRow.Index + 1) + " } of " + dataGridViewActors.Rows.Count;
+            DisplayNumberOfRows();
         }
                
         private void FormActors_Shown(object sender, EventArgs e)
