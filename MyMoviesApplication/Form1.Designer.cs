@@ -36,14 +36,11 @@ namespace MyMoviesApplication
             this.buttonAddNewMovie = new System.Windows.Forms.Button();
             this.buttonAddNewActor = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.buttonDisplayGenres = new System.Windows.Forms.Button();
             this.buttonDisplayMovies = new System.Windows.Forms.Button();
             this.buttonDisplayActors = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.buttonExit = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -85,17 +82,11 @@ namespace MyMoviesApplication
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.buttonDisplayGenres);
+            this.panel2.Controls.Add(this.buttonExit);
             this.panel2.Controls.Add(this.buttonDisplayMovies);
             this.panel2.Controls.Add(this.buttonDisplayActors);
             resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
-            // 
-            // buttonDisplayGenres
-            // 
-            resources.ApplyResources(this.buttonDisplayGenres, "buttonDisplayGenres");
-            this.buttonDisplayGenres.Name = "buttonDisplayGenres";
-            this.buttonDisplayGenres.UseVisualStyleBackColor = true;
             // 
             // buttonDisplayMovies
             // 
@@ -111,13 +102,6 @@ namespace MyMoviesApplication
             this.buttonDisplayActors.UseVisualStyleBackColor = true;
             this.buttonDisplayActors.Click += new System.EventHandler(this.buttonDisplayActors_Click);
             // 
-            // panel3
-            // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Controls.Add(this.buttonExit);
-            resources.ApplyResources(this.panel3, "panel3");
-            this.panel3.Name = "panel3";
-            // 
             // buttonExit
             // 
             resources.ApplyResources(this.buttonExit, "buttonExit");
@@ -129,7 +113,6 @@ namespace MyMoviesApplication
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
@@ -138,7 +121,6 @@ namespace MyMoviesApplication
             this.Name = "FormMenu";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -152,10 +134,8 @@ namespace MyMoviesApplication
         private System.Windows.Forms.Button buttonAddNewActor;
         private System.Windows.Forms.Button buttonAddNewGenre;
         private System.Windows.Forms.Button buttonAddNewMovie;
-        private System.Windows.Forms.Button buttonDisplayGenres;
         private System.Windows.Forms.Button buttonDisplayMovies;
         private System.Windows.Forms.Button buttonDisplayActors;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button buttonExit;
     }
 }

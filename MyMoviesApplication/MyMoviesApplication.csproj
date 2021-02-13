@@ -96,6 +96,12 @@
     <Compile Include="Forms\FormMoviesView.Designer.cs">
       <DependentUpon>FormMoviesView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormSplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormSplashScreen.Designer.cs">
+      <DependentUpon>FormSplashScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="my_moviesDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -128,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormMoviesView.resx">
       <DependentUpon>FormMoviesView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormSplashScreen.resx">
+      <DependentUpon>FormSplashScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
